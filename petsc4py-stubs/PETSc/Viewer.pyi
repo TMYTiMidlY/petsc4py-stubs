@@ -255,7 +255,7 @@ class Viewer(Object):
         name: str,
         mode: FileModeSpec = None,
         comm: Comm | None = None,
-    ) -> Self:
+    ) -> ViewerHDF5:
         """Create a viewer of type `Type.HDF5`.
 
         Collective.
