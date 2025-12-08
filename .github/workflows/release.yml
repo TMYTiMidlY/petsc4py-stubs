@@ -104,7 +104,7 @@ jobs:
       - release-build
     environment:
         name: pypi
-        url: https://pypi.org/p/petsc4py-stubs//
+        url: https://pypi.org/p/petsc4py-stubs/
     permissions:
       id-token: write
 
