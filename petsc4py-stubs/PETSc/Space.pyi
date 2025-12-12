@@ -1,6 +1,6 @@
 """Type stubs for PETSc Space module."""
 
-
+from enum import StrEnum
 from typing import Self
 
 from .Object import Object
@@ -12,24 +12,24 @@ from .DT import Quad
 # Import types from typing module
 from petsc4py.typing import ArrayInt
 
-class SpaceType:
+class SpaceType(StrEnum):
     """The function space types."""
 
-    POLYNOMIAL: str
-    PTRIMMED: str
-    TENSOR: str
-    SUM: str
-    POINT: str
-    SUBSPACE: str
-    WXY: str
+    POLYNOMIAL = ...
+    PTRIMMED = ...
+    TENSOR = ...
+    SUM = ...
+    POINT = ...
+    SUBSPACE = ...
+    WXY = ...
 
-class DualSpaceType:
+class DualSpaceType(StrEnum):
     """The dual space types."""
 
-    LAGRANGE: str
-    SIMPLE: str
-    REFINED: str
-    BDM: str
+    LAGRANGE = ...
+    SIMPLE = ...
+    REFINED = ...
+    BDM = ...
 
 class Space(Object):
     """Function space object.

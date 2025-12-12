@@ -1,6 +1,7 @@
 """Type stubs for PETSc Scatter module."""
 
 
+from enum import IntEnum, StrEnum
 from typing import Self, Literal
 
 from .Object import Object
@@ -16,7 +17,7 @@ from petsc4py.typing import (
     ScatterModeSpec,
 )
 
-class ScatterType:
+class ScatterType(StrEnum):
     """Scatter type.
 
     See Also
@@ -24,22 +25,22 @@ class ScatterType:
     petsc.VecScatterType
     """
 
-    BASIC: str
-    NEIGHBOR: str
-    ALLGATHERV: str
-    ALLGATHER: str
-    GATHERV: str
-    GATHER: str
-    ALLTOALL: str
-    WINDOW: str
+    BASIC = ...
+    NEIGHBOR = ...
+    ALLGATHERV = ...
+    ALLGATHER = ...
+    GATHERV = ...
+    GATHER = ...
+    ALLTOALL = ...
+    WINDOW = ...
 
-class ScatterMode:
+class ScatterMode(IntEnum):
     """Scatter mode."""
 
-    FORWARD: int
-    REVERSE: int
-    FORWARD_LOCAL: int
-    REVERSE_LOCAL: int
+    FORWARD = ...
+    REVERSE = ...
+    FORWARD_LOCAL = ...
+    REVERSE_LOCAL = ...
 
 class Scatter(Object):
     """Scatter object.

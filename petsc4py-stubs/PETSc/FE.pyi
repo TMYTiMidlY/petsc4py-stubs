@@ -1,6 +1,6 @@
 """Type stubs for PETSc FE module."""
 
-
+from enum import StrEnum
 from typing import Self
 
 from numpy import ndarray
@@ -13,12 +13,12 @@ from .Space import Space, DualSpace
 from .DT import Quad
 
 
-class FEType:
+class FEType(StrEnum):
     """The finite element types."""
 
-    BASIC: str
-    OPENCL: str
-    COMPOSITE: str
+    BASIC = ...
+    OPENCL = ...
+    COMPOSITE = ...
 
 
 class FE(Object):

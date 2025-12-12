@@ -1,6 +1,7 @@
 """Type stubs for PETSc AO (Application Ordering) module."""
 
 
+from enum import StrEnum
 from typing import Sequence, Self
 
 from .Object import Object
@@ -8,13 +9,13 @@ from .Comm import Comm
 from .Viewer import Viewer
 from .IS import IS
 
-class AOType:
+class AOType(StrEnum):
     """The application ordering types."""
 
-    BASIC: str
-    ADVANCED: str
-    MAPPING: str
-    MEMORYSCALABLE: str
+    BASIC = ...
+    ADVANCED = ...
+    MAPPING = ...
+    MEMORYSCALABLE = ...
 
 class AO(Object):
     """Application ordering object.

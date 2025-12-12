@@ -1,6 +1,6 @@
 """Type stubs for PETSc DMSwarm module."""
 
-
+from enum import IntEnum
 from typing import Sequence, Self
 from numpy import ndarray, dtype
 
@@ -14,34 +14,34 @@ from .Viewer import Viewer
 # Import types from typing module
 from petsc4py.typing import ScatterModeSpec
 
-class DMSwarmType:
+class DMSwarmType(IntEnum):
     """Swarm types."""
 
-    BASIC: int
-    PIC: int
+    BASIC = ...
+    PIC = ...
 
-class DMSwarmMigrateType:
+class DMSwarmMigrateType(IntEnum):
     """Swarm migration types."""
 
-    MIGRATE_BASIC: int
-    MIGRATE_DMCELLNSCATTER: int
-    MIGRATE_DMCELLEXACT: int
-    MIGRATE_USER: int
+    MIGRATE_BASIC = ...
+    MIGRATE_DMCELLNSCATTER = ...
+    MIGRATE_DMCELLEXACT = ...
+    MIGRATE_USER = ...
 
-class DMSwarmCollectType:
+class DMSwarmCollectType(IntEnum):
     """Swarm collection types."""
 
-    COLLECT_BASIC: int
-    COLLECT_DMDABOUNDINGBOX: int
-    COLLECT_GENERAL: int
-    COLLECT_USER: int
+    COLLECT_BASIC = ...
+    COLLECT_DMDABOUNDINGBOX = ...
+    COLLECT_GENERAL = ...
+    COLLECT_USER = ...
 
-class DMSwarmPICLayoutType:
+class DMSwarmPICLayoutType(IntEnum):
     """Swarm PIC layout types."""
 
-    LAYOUT_REGULAR: int
-    LAYOUT_GAUSS: int
-    LAYOUT_SUBDIVISION: int
+    LAYOUT_REGULAR = ...
+    LAYOUT_GAUSS = ...
+    LAYOUT_SUBDIVISION = ...
 
 class CellDM(Object):
     """CellDM object.

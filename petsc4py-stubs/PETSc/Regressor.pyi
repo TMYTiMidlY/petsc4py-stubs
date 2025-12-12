@@ -1,6 +1,6 @@
 """Type stubs for PETSc Regressor module."""
 
-
+from enum import StrEnum, IntEnum
 from typing import Self
 
 from .Object import Object
@@ -15,8 +15,7 @@ from .KSP import KSP
 # Import types from typing module
 from petsc4py.typing import Scalar
 
-
-class RegressorType:
+class RegressorType(StrEnum):
     """REGRESSOR solver type.
 
     See Also
@@ -24,10 +23,9 @@ class RegressorType:
     petsc.PetscRegressorType
     """
 
-    LINEAR: str
+    LINEAR = ...
 
-
-class RegressorLinearType:
+class RegressorLinearType(IntEnum):
     """Linear regressor type.
 
     See Also
@@ -35,10 +33,9 @@ class RegressorLinearType:
     petsc.PetscRegressorLinearType
     """
 
-    OLS: int
-    LASSO: int
-    RIDGE: int
-
+    OLS = ...
+    LASSO = ...
+    RIDGE = ...
 
 class Regressor(Object):
     """Regression solver.

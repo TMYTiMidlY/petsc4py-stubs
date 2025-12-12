@@ -5,7 +5,7 @@ Type stubs for [petsc4py](https://petsc.org/release/petsc4py/).
 ## Installation
 
 ```bash
-pip install -e .
+pip install petsc4py-stubs
 ```
 
 ## Usage

@@ -1,6 +1,7 @@
 """Type stubs for PETSc IS (Index Set) module."""
 
 
+from enum import StrEnum, IntEnum
 from typing import Any, Sequence, Self
 
 from .Object import Object
@@ -11,12 +12,12 @@ from .Viewer import Viewer
 # Import types from typing module
 from petsc4py.typing import ArrayInt
 
-class ISType:
+class ISType(StrEnum):
     """The index set types."""
 
-    GENERAL: str
-    BLOCK: str
-    STRIDE: str
+    GENERAL = ...
+    BLOCK = ...
+    STRIDE = ...
 
 class IS(Object):
     """A collection of indices.
@@ -689,12 +690,12 @@ class LGMap(Object):
     petsc.ISLocalToGlobalMapping
     """
 
-    class MapMode:
+    class MapMode(IntEnum):
         """Mapping mode."""
 
-        BASIC: int
-        MASK: int
-        DROP: int
+        BASIC = ...
+        MASK = ...
+        DROP = ...
 
     Mode = MapMode
 

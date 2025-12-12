@@ -1,6 +1,6 @@
 """Type stubs for PETSc Partitioner module."""
 
-
+from enum import StrEnum
 from typing import Sequence, Self
 
 from .Object import Object
@@ -8,17 +8,17 @@ from .Comm import Comm
 from .Viewer import Viewer
 
 
-class PartitionerType:
+class PartitionerType(StrEnum):
     """The partitioner types."""
 
-    PARMETIS: str
-    PTSCOTCH: str
-    CHACO: str
-    SIMPLE: str
-    SHELL: str
-    GATHER: str
-    MATPARTITIONING: str
-    MULTISTAGE: str
+    PARMETIS = ...
+    PTSCOTCH = ...
+    CHACO = ...
+    SIMPLE = ...
+    SHELL = ...
+    GATHER = ...
+    MATPARTITIONING = ...
+    MULTISTAGE = ...
 
 
 class Partitioner(Object):

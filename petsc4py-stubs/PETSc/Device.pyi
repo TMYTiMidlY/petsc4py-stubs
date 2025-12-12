@@ -1,5 +1,6 @@
 """Type stubs for PETSc Device module."""
 
+from enum import IntEnum
 from typing import Self
 
 from .Object import Object
@@ -7,7 +8,7 @@ from .Viewer import Viewer
 
 from .Comm import Comm
 
-class DeviceType:
+class DeviceType(IntEnum):
     """The type of device.
 
     See Also
@@ -16,13 +17,13 @@ class DeviceType:
 
     """
 
-    HOST: int
-    CUDA: int
-    HIP: int
-    SYCL: int
-    DEFAULT: int
+    HOST = ...
+    CUDA = ...
+    HIP = ...
+    SYCL = ...
+    DEFAULT = ...
 
-class StreamType:
+class StreamType(IntEnum):
     """The type of stream.
 
     See Also
@@ -32,12 +33,12 @@ class StreamType:
 
     """
 
-    DEFAULT: int
-    NONBLOCKING: int
-    DEFAULT_WITH_BARRIER: int
-    NONBLOCKING_WITH_BARRIER: int
+    DEFAULT = ...
+    NONBLOCKING = ...
+    DEFAULT_WITH_BARRIER = ...
+    NONBLOCKING_WITH_BARRIER = ...
 
-class DeviceJoinMode:
+class DeviceJoinMode(IntEnum):
     """The type of join to perform.
 
     See Also
@@ -47,9 +48,9 @@ class DeviceJoinMode:
 
     """
 
-    DESTROY: int
-    SYNC: int
-    NO_SYNC: int
+    DESTROY = ...
+    SYNC = ...
+    NO_SYNC = ...
 
 class Device:
     """The device object.

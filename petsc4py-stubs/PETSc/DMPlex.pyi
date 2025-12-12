@@ -1,6 +1,6 @@
 """Type stubs for PETSc DMPlex module."""
 
-
+from enum import StrEnum
 from typing import Sequence, Self
 
 from .DM import DM, InsertModeSpec
@@ -2210,19 +2210,19 @@ class DMPlex(DM):
         ...
 
 
-class DMPlexTransformType:
+class DMPlexTransformType(StrEnum):
     """Transformation types."""
 
-    REFINEREGULAR: str
-    REFINEALFELD: str
-    REFINEPOWELLSABIN: str
-    REFINEBOUNDARYLAYER: str
-    REFINESBR: str
-    REFINETOBOX: str
-    REFINETOSIMPLEX: str
-    REFINE1D: str
-    EXTRUDE: str
-    TRANSFORMFILTER: str
+    REFINEREGULAR = ...
+    REFINEALFELD = ...
+    REFINEPOWELLSABIN = ...
+    REFINEBOUNDARYLAYER = ...
+    REFINESBR = ...
+    REFINETOBOX = ...
+    REFINETOSIMPLEX = ...
+    REFINE1D = ...
+    EXTRUDE = ...
+    TRANSFORMFILTER = ...
 
 
 class DMPlexTransform:

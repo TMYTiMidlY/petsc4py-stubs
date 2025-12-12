@@ -1,6 +1,7 @@
 """Type stubs for PETSc Random module."""
 
 
+from enum import StrEnum
 from typing import Self
 
 from .Object import Object
@@ -11,14 +12,14 @@ from .Viewer import Viewer
 # Import types from typing module
 from petsc4py.typing import Scalar
 
-class RandomType:
+class RandomType(StrEnum):
     """The random number generator type."""
 
-    RAND: str
-    RAND48: str
-    SPRNG: str
-    RANDER48: str
-    RANDOM123: str
+    RAND = ...
+    RAND48 = ...
+    SPRNG = ...
+    RANDER48 = ...
+    RANDOM123 = ...
 
 class Random(Object):
     """The random number generator object.

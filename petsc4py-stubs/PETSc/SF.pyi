@@ -1,5 +1,6 @@
 """Type stubs for PETSc SF (Star Forest) module."""
 
+from enum import StrEnum
 from typing import Any, Sequence, Self
 from numpy import ndarray
 
@@ -12,17 +13,17 @@ from .Section import Section
 from petsc4py.typing import ArrayInt
 from mpi4py.MPI import Datatype, Op
 
-class SFType:
+class SFType(StrEnum):
     """The star forest types."""
 
-    BASIC: str
-    NEIGHBOR: str
-    ALLGATHERV: str
-    ALLGATHER: str
-    GATHERV: str
-    GATHER: str
-    ALLTOALL: str
-    WINDOW: str
+    BASIC = ...
+    NEIGHBOR = ...
+    ALLGATHERV = ...
+    ALLGATHER = ...
+    GATHERV = ...
+    GATHER = ...
+    ALLTOALL = ...
+    WINDOW = ...
 
 class SF(Object):
     """Star Forest object for communication.

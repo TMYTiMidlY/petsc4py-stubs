@@ -1,6 +1,6 @@
 """Type stubs for PETSc MatPartitioning module."""
 
-
+from enum import StrEnum
 from typing import Self
 
 from .Object import Object
@@ -10,17 +10,17 @@ from .Mat import Mat
 from .IS import IS
 
 
-class MatPartitioningType:
+class MatPartitioningType(StrEnum):
     """The partitioning types."""
 
-    PARTITIONINGCURRENT: str
-    PARTITIONINGAVERAGE: str
-    PARTITIONINGSQUARE: str
-    PARTITIONINGPARMETIS: str
-    PARTITIONINGCHACO: str
-    PARTITIONINGPARTY: str
-    PARTITIONINGPTSCOTCH: str
-    PARTITIONINGHIERARCH: str
+    PARTITIONINGCURRENT = ...
+    PARTITIONINGAVERAGE = ...
+    PARTITIONINGSQUARE = ...
+    PARTITIONINGPARMETIS = ...
+    PARTITIONINGCHACO = ...
+    PARTITIONINGPARTY = ...
+    PARTITIONINGPTSCOTCH = ...
+    PARTITIONINGHIERARCH = ...
 
 
 class MatPartitioning(Object):

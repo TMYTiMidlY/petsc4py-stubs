@@ -1,5 +1,6 @@
 """Type stubs for PETSc Const module."""
 
+from enum import IntEnum
 
 # Basic constants
 DECIDE: int
@@ -31,7 +32,7 @@ PINFINITY: float
 """Very large positive real value, same as `INFINITY`."""
 
 
-class InsertMode:
+class InsertMode(IntEnum):
     """Insertion mode.
 
     Most commonly used insertion modes are:
@@ -49,26 +50,26 @@ class InsertMode:
     """
 
     # native
-    NOT_SET_VALUES: int
-    INSERT_VALUES: int
-    ADD_VALUES: int
-    MAX_VALUES: int
-    INSERT_ALL_VALUES: int
-    ADD_ALL_VALUES: int
-    INSERT_BC_VALUES: int
-    ADD_BC_VALUES: int
+    NOT_SET_VALUES = ...
+    INSERT_VALUES = ...
+    ADD_VALUES = ...
+    MAX_VALUES = ...
+    INSERT_ALL_VALUES = ...
+    ADD_ALL_VALUES = ...
+    INSERT_BC_VALUES = ...
+    ADD_BC_VALUES = ...
 
     # aliases
-    INSERT: int
-    ADD: int
-    MAX: int
-    INSERT_ALL: int
-    ADD_ALL: int
-    INSERT_BC: int
-    ADD_BC: int
+    INSERT = ...
+    ADD = ...
+    MAX = ...
+    INSERT_ALL = ...
+    ADD_ALL = ...
+    INSERT_BC = ...
+    ADD_BC = ...
 
 
-class ScatterMode:
+class ScatterMode(IntEnum):
     """Scatter mode.
 
     Most commonly used scatter modes are:
@@ -85,19 +86,19 @@ class ScatterMode:
     """
 
     # native
-    SCATTER_FORWARD: int
-    SCATTER_REVERSE: int
-    SCATTER_FORWARD_LOCAL: int
-    SCATTER_REVERSE_LOCAL: int
+    SCATTER_FORWARD = ...
+    SCATTER_REVERSE = ...
+    SCATTER_FORWARD_LOCAL = ...
+    SCATTER_REVERSE_LOCAL = ...
 
     # aliases
-    FORWARD: int
-    REVERSE: int
-    FORWARD_LOCAL: int
-    REVERSE_LOCAL: int
+    FORWARD = ...
+    REVERSE = ...
+    FORWARD_LOCAL = ...
+    REVERSE_LOCAL = ...
 
 
-class NormType:
+class NormType(IntEnum):
     """Norm type.
 
     Commonly used norm types:
@@ -117,21 +118,21 @@ class NormType:
     """
 
     # native
-    NORM_1: int
-    NORM_2: int
-    NORM_1_AND_2: int
-    NORM_FROBENIUS: int
-    NORM_INFINITY: int
-    NORM_MAX: int
+    NORM_1 = ...
+    NORM_2 = ...
+    NORM_1_AND_2 = ...
+    NORM_FROBENIUS = ...
+    NORM_INFINITY = ...
+    NORM_MAX = ...
 
     # aliases
-    N1: int
-    N2: int
-    N12: int
-    MAX: int
-    FROBENIUS: int
-    INFINITY: int
+    N1 = ...
+    N2 = ...
+    N12 = ...
+    MAX = ...
+    FROBENIUS = ...
+    INFINITY = ...
 
     # extra aliases
-    FRB: int
-    INF: int
+    FRB = ...
+    INF = ...

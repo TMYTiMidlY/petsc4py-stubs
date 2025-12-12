@@ -1,6 +1,6 @@
 """Type stubs for PETSc DMDA module."""
 
-
+from enum import IntEnum
 from typing import Any, Sequence, Self
 
 # Import types from other modules
@@ -13,23 +13,23 @@ from .AO import AO
 # Import types from typing module
 from petsc4py.typing import ArrayInt, DimsSpec
 
-class DMDAStencilType:
+class DMDAStencilType(IntEnum):
     """DMDA Stencil types."""
 
-    STAR: int
-    BOX: int
+    STAR = ...
+    BOX = ...
 
-class DMDAInterpolationType:
+class DMDAInterpolationType(IntEnum):
     """DMDA Interpolation types."""
 
-    Q0: int
-    Q1: int
+    Q0 = ...
+    Q1 = ...
 
-class DMDAElementType:
+class DMDAElementType(IntEnum):
     """DMDA Element types."""
 
-    P1: int
-    Q1: int
+    P1 = ...
+    Q1 = ...
 
 class DMDA(DM):
     """A DM object that is used to manage data for a structured grid.
