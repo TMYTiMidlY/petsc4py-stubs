@@ -1,3 +1,9 @@
+## v0.1.4 (2025-12-12)
+
+### Fix
+
+- Use StrEnum and IntEnum
+
 ## v0.1.3 (2025-12-08)
 
 ### Fix
