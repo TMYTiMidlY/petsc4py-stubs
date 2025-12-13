@@ -1,3 +1,9 @@
+## v0.1.6 (2025-12-14)
+
+### Fix
+
+- Remove typing exports from petsc4py.PETSc
+
 ## v0.1.5 (2025-12-13)
 
 ### Fix
