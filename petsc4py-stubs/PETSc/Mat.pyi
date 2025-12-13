@@ -1,7 +1,7 @@
 """Type stubs for PETSc Mat module."""
 
 from enum import IntEnum, StrEnum
-from typing import Any, Callable, Literal, Self, Sequence, overload
+from typing import Any, Callable, Literal, Optional, Self, Sequence, overload
 
 # Import types from typing module
 from petsc4py.typing import (
@@ -372,7 +372,7 @@ class Mat(Object):
         """Set the matrix type."""
         ...
 
-    def setSizes(self, size: MatSizeSpec, bsize: MatBlockSizeSpec = None) -> None:
+    def setSizes(self, size: MatSizeSpec, bsize: Optional[MatBlockSizeSpec] = None) -> None:
         """Set the local, global and block sizes."""
         ...
 
@@ -404,7 +404,7 @@ class Mat(Object):
     def createAIJ(
         self,
         size: MatSizeSpec,
-        bsize: MatBlockSizeSpec = None,
+        bsize: Optional[MatBlockSizeSpec] = None,
         nnz: NNZSpec | None = None,
         csr: CSRIndicesSpec | None = None,
         comm: Comm | None = None,
@@ -437,7 +437,7 @@ class Mat(Object):
     def createAIJCRL(
         self,
         size: MatSizeSpec,
-        bsize: MatBlockSizeSpec = None,
+        bsize: Optional[MatBlockSizeSpec] = None,
         nnz: NNZSpec | None = None,
         csr: CSRIndicesSpec | None = None,
         comm: Comm | None = None,
@@ -471,7 +471,7 @@ class Mat(Object):
         self,
         size: MatSizeSpec,
         csr: CSRSpec | tuple[CSRSpec, CSRSpec],
-        bsize: MatBlockSizeSpec = None,
+        bsize: Optional[MatBlockSizeSpec] = None,
         comm: Comm | None = None,
     ) -> Self:
         """Create a sparse AIJ matrix with data in CSR format."""
@@ -480,7 +480,7 @@ class Mat(Object):
     def createDense(
         self,
         size: MatSizeSpec,
-        bsize: MatBlockSizeSpec = None,
+        bsize: Optional[MatBlockSizeSpec] = None,
         array: Sequence[Scalar] | None = None,
         comm: Comm | None = None,
     ) -> Self:
@@ -490,7 +490,7 @@ class Mat(Object):
     def createDenseCUDA(
         self,
         size: MatSizeSpec,
-        bsize: MatBlockSizeSpec = None,
+        bsize: Optional[MatBlockSizeSpec] = None,
         array: Sequence[Scalar] | None = None,
         cudahandle: int | None = None,
         comm: Comm | None = None,
@@ -563,7 +563,7 @@ class Mat(Object):
     def createIS(
         self,
         size: MatSizeSpec,
-        bsize: MatBlockSizeSpec = None,
+        bsize: Optional[MatBlockSizeSpec] = None,
         lgmapr: LGMap | None = None,
         lgmapc: LGMap | None = None,
         comm: Comm | None = None,
