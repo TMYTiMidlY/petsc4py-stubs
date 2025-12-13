@@ -29,7 +29,6 @@ PCPatchComputeFunction = Callable[
     ["PC", int, Vec, Vec, IS, int, Sequence[int], Sequence[int], Any], None
 ]
 
-
 class PCType(StrEnum):
     """The preconditioner method."""
 
@@ -83,7 +82,6 @@ class PCType(StrEnum):
     HPDDM = ...
     H2OPUS = ...
 
-
 class PCSide(IntEnum):
     """The manner in which the preconditioner is applied."""
 
@@ -96,7 +94,6 @@ class PCSide(IntEnum):
     R = ...
     S = ...
 
-
 class PCASMType(IntEnum):
     """The ASM subtype."""
 
@@ -104,7 +101,6 @@ class PCASMType(IntEnum):
     BASIC = ...
     RESTRICT = ...
     INTERPOLATE = ...
-
 
 class PCGASMType(IntEnum):
     """The GASM subtype."""
@@ -114,7 +110,6 @@ class PCGASMType(IntEnum):
     RESTRICT = ...
     INTERPOLATE = ...
 
-
 class PCMGType(IntEnum):
     """The MG subtype."""
 
@@ -123,13 +118,11 @@ class PCMGType(IntEnum):
     FULL = ...
     KASKADE = ...
 
-
 class PCMGCycleType(IntEnum):
     """The MG cycle type."""
 
     V = ...
     W = ...
-
 
 class PCGAMGType(StrEnum):
     """The GAMG subtype."""
@@ -137,7 +130,6 @@ class PCGAMGType(StrEnum):
     AGG = ...
     GEO = ...
     CLASSICAL = ...
-
 
 class PCCompositeType(IntEnum):
     """The composite type."""
@@ -148,7 +140,6 @@ class PCCompositeType(IntEnum):
     SPECIAL = ...
     SCHUR = ...
 
-
 class PCFieldSplitSchurPreType(IntEnum):
     """The field split Schur subtype."""
 
@@ -158,7 +149,6 @@ class PCFieldSplitSchurPreType(IntEnum):
     USER = ...
     FULL = ...
 
-
 class PCFieldSplitSchurFactType(IntEnum):
     """The field split Schur factorization type."""
 
@@ -166,7 +156,6 @@ class PCFieldSplitSchurFactType(IntEnum):
     LOWER = ...
     UPPER = ...
     FULL = ...
-
 
 class PCPatchConstructType(IntEnum):
     """The patch construction type."""
@@ -177,7 +166,6 @@ class PCPatchConstructType(IntEnum):
     USER = ...
     PYTHON = ...
 
-
 class PCHPDDMCoarseCorrectionType(IntEnum):
     """The HPDDM coarse correction type."""
 
@@ -185,7 +173,6 @@ class PCHPDDMCoarseCorrectionType(IntEnum):
     ADDITIVE = ...
     BALANCED = ...
     NONE = ...
-
 
 class PCDeflationSpaceType(IntEnum):
     """The deflation space subtype."""
@@ -200,7 +187,6 @@ class PCDeflationSpaceType(IntEnum):
     AGGREGATION = ...
     USER = ...
 
-
 class PCFailedReason(IntEnum):
     """The reason the preconditioner has failed."""
 
@@ -211,7 +197,6 @@ class PCFailedReason(IntEnum):
     FACTOR_OUTMEMORY = ...
     FACTOR_OTHER = ...
     SUBPC_ERROR = ...
-
 
 class PC(Object):
     """Preconditioners.

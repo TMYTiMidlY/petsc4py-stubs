@@ -1,6 +1,5 @@
 """Type stubs for PETSc Options module."""
 
-
 from typing import Self, Sequence
 
 # Import types from typing module

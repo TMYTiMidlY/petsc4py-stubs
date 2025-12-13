@@ -36,6 +36,7 @@ from .Viewer import Viewer
 
 class MatType(StrEnum):
     """Matrix type."""
+
     SAME = ...
     MAIJ = ...
     SEQMAIJ = ...
@@ -127,9 +128,9 @@ class MatType(StrEnum):
     DIAGONAL = ...
     H2OPUS = ...
 
-
 class MatOption(IntEnum):
     """Matrix option."""
+
     OPTION_MIN = ...
     UNUSED_NONZERO_LOCATION_ERR = ...
     ROW_ORIENTED = ...
@@ -158,24 +159,24 @@ class MatOption(IntEnum):
     SORTED_FULL = ...
     OPTION_MAX = ...
 
-
 class MatAssemblyType(IntEnum):
     """Matrix assembly type."""
+
     FINAL_ASSEMBLY = ...
     FLUSH_ASSEMBLY = ...
     FINAL = ...
     FLUSH = ...
 
-
 class MatInfoType(IntEnum):
     """Matrix info type."""
+
     LOCAL = ...
     GLOBAL_MAX = ...
     GLOBAL_SUM = ...
 
-
 class MatStructure(IntEnum):
     """Matrix modification structure."""
+
     SAME_NONZERO_PATTERN = ...
     DIFFERENT_NONZERO_PATTERN = ...
     SUBSET_NONZERO_PATTERN = ...
@@ -189,16 +190,16 @@ class MatStructure(IntEnum):
     UNKNOWN = ...
     UNKNOWN_NZ = ...
 
-
 class MatDuplicateOption(IntEnum):
     """Matrix duplicate option."""
+
     DO_NOT_COPY_VALUES = ...
     COPY_VALUES = ...
     SHARE_NONZERO_PATTERN = ...
 
-
 class MatOrderingType(StrEnum):
     """Factored matrix ordering type."""
+
     NATURAL = ...
     ND = ...
     OWD = ...
@@ -210,9 +211,9 @@ class MatOrderingType(StrEnum):
     AMD = ...
     METISND = ...
 
-
 class MatSolverType(StrEnum):
     """Factored matrix solver type."""
+
     SUPERLU = ...
     SUPERLU_DIST = ...
     STRUMPACK = ...
@@ -234,9 +235,9 @@ class MatSolverType(StrEnum):
     CUDA = ...
     SPQR = ...
 
-
 class MatFactorShiftType(IntEnum):
     """Factored matrix shift type."""
+
     NONE = ...
     NONZERO = ...
     POSITIVE_DEFINITE = ...
@@ -244,9 +245,9 @@ class MatFactorShiftType(IntEnum):
     NZ = ...
     PD = ...
 
-
 class MatSORType(IntEnum):
     """Matrix SOR type."""
+
     FORWARD_SWEEP = ...
     BACKWARD_SWEEP = ...
     SYMMETRY_SWEEP = ...
@@ -258,62 +259,55 @@ class MatSORType(IntEnum):
     APPLY_UPPER = ...
     APPLY_LOWER = ...
 
-
 class MatStencil:
     """Associate structured grid coordinates with matrix indices."""
-    
+
     @property
     def i(self) -> int:
         """First logical grid coordinate."""
         ...
-    
+
     @i.setter
     def i(self, value: int) -> None: ...
-    
     @property
     def j(self) -> int:
         """Second logical grid coordinate."""
         ...
-    
+
     @j.setter
     def j(self, value: int) -> None: ...
-    
     @property
     def k(self) -> int:
         """Third logical grid coordinate."""
         ...
-    
+
     @k.setter
     def k(self, value: int) -> None: ...
-    
     @property
     def c(self) -> int:
         """Field component."""
         ...
-    
+
     @c.setter
     def c(self, value: int) -> None: ...
-    
     @property
     def index(self) -> tuple[int, int, int]:
         """Logical grid coordinates ``(i, j, k)``."""
         ...
-    
+
     @index.setter
     def index(self, value: Sequence[int]) -> None: ...
-    
     @property
     def field(self) -> int:
         """Field component."""
         ...
-    
+
     @field.setter
     def field(self, value: int) -> None: ...
 
-
 class Mat(Object):
     """Matrix object.
-    
+
     Mat is described in the PETSc manual.
     """
 
@@ -355,7 +349,9 @@ class Mat(Object):
 
     # Indexing
     def __getitem__(self, ij: tuple[int | slice, int | slice]) -> ArrayScalar: ...
-    def __setitem__(self, ij: tuple[int | slice, int | slice], v: Scalar | Sequence[Scalar]) -> None: ...
+    def __setitem__(
+        self, ij: tuple[int | slice, int | slice], v: Scalar | Sequence[Scalar]
+    ) -> None: ...
     def __call__(self, x: Vec, y: Vec | None = None) -> Vec: ...
 
     # View and lifecycle
@@ -376,11 +372,7 @@ class Mat(Object):
         """Set the matrix type."""
         ...
 
-    def setSizes(
-        self,
-        size: MatSizeSpec,
-        bsize: MatBlockSizeSpec = None
-    ) -> None:
+    def setSizes(self, size: MatSizeSpec, bsize: MatBlockSizeSpec = None) -> None:
         """Set the local, global and block sizes."""
         ...
 
@@ -415,7 +407,7 @@ class Mat(Object):
         bsize: MatBlockSizeSpec = None,
         nnz: NNZSpec | None = None,
         csr: CSRIndicesSpec | None = None,
-        comm: Comm | None = None
+        comm: Comm | None = None,
     ) -> Self:
         """Create a sparse AIJ matrix, optionally preallocating."""
         ...
@@ -426,7 +418,7 @@ class Mat(Object):
         bsize: MatBlockSizeSpec,
         nnz: NNZSpec | None = None,
         csr: CSRIndicesSpec | None = None,
-        comm: Comm | None = None
+        comm: Comm | None = None,
     ) -> Self:
         """Create a sparse blocked BAIJ matrix, optionally preallocating."""
         ...
@@ -437,7 +429,7 @@ class Mat(Object):
         bsize: MatBlockSizeSpec,
         nnz: NNZSpec | None = None,
         csr: CSRIndicesSpec | None = None,
-        comm: Comm | None = None
+        comm: Comm | None = None,
     ) -> Self:
         """Create a sparse SBAIJ matrix in symmetric block format."""
         ...
@@ -448,7 +440,7 @@ class Mat(Object):
         bsize: MatBlockSizeSpec = None,
         nnz: NNZSpec | None = None,
         csr: CSRIndicesSpec | None = None,
-        comm: Comm | None = None
+        comm: Comm | None = None,
     ) -> Self:
         """Create a sparse AIJCRL matrix."""
         ...
@@ -461,7 +453,9 @@ class Mat(Object):
         """Set preallocation using coordinate format with global indices."""
         ...
 
-    def setPreallocationCOOLocal(self, coo_i: Sequence[int], coo_j: Sequence[int]) -> Self:
+    def setPreallocationCOOLocal(
+        self, coo_i: Sequence[int], coo_j: Sequence[int]
+    ) -> Self:
         """Set preallocation using coordinate format with local indices."""
         ...
 
@@ -478,7 +472,7 @@ class Mat(Object):
         size: MatSizeSpec,
         csr: CSRSpec | tuple[CSRSpec, CSRSpec],
         bsize: MatBlockSizeSpec = None,
-        comm: Comm | None = None
+        comm: Comm | None = None,
     ) -> Self:
         """Create a sparse AIJ matrix with data in CSR format."""
         ...
@@ -488,7 +482,7 @@ class Mat(Object):
         size: MatSizeSpec,
         bsize: MatBlockSizeSpec = None,
         array: Sequence[Scalar] | None = None,
-        comm: Comm | None = None
+        comm: Comm | None = None,
     ) -> Self:
         """Create a DENSE matrix."""
         ...
@@ -499,7 +493,7 @@ class Mat(Object):
         bsize: MatBlockSizeSpec = None,
         array: Sequence[Scalar] | None = None,
         cudahandle: int | None = None,
-        comm: Comm | None = None
+        comm: Comm | None = None,
     ) -> Self:
         """Create a DENSECUDA matrix with optional host and device data."""
         ...
@@ -532,17 +526,13 @@ class Mat(Object):
         """Create a HERMITIANTRANSPOSE matrix that behaves like (A*)ᵀ."""
         ...
 
-    def createLRC(
-        self,
-        A: Mat | None,
-        U: Mat,
-        c: Vec | None,
-        V: Mat | None
-    ) -> Self:
+    def createLRC(self, A: Mat | None, U: Mat, c: Vec | None, V: Mat | None) -> Self:
         """Create a low-rank correction LRC matrix representing A + UCVᵀ."""
         ...
 
-    def createSubMatrixVirtual(self, A: Mat, isrow: IS, iscol: IS | None = None) -> Self:
+    def createSubMatrixVirtual(
+        self, A: Mat, isrow: IS, iscol: IS | None = None
+    ) -> Self:
         """Create a SUBMATRIX matrix that acts as a submatrix."""
         ...
 
@@ -551,7 +541,7 @@ class Mat(Object):
         mats: Sequence[Sequence[Mat | None]],
         isrows: Sequence[IS] | None = None,
         iscols: Sequence[IS] | None = None,
-        comm: Comm | None = None
+        comm: Comm | None = None,
     ) -> Self:
         """Create a NEST matrix containing multiple submatrices."""
         ...
@@ -565,7 +555,7 @@ class Mat(Object):
         leafsize: int | None = None,
         maxrank: int | None = None,
         bs: int | None = None,
-        rtol: float | None = None
+        rtol: float | None = None,
     ) -> Self:
         """Create a hierarchical H2OPUS matrix sampling from a provided operator."""
         ...
@@ -576,16 +566,13 @@ class Mat(Object):
         bsize: MatBlockSizeSpec = None,
         lgmapr: LGMap | None = None,
         lgmapc: LGMap | None = None,
-        comm: Comm | None = None
+        comm: Comm | None = None,
     ) -> Self:
         """Create an IS matrix representing globally unassembled operators."""
         ...
 
     def createConstantDiagonal(
-        self,
-        size: MatSizeSpec,
-        diag: float,
-        comm: Comm | None = None
+        self, size: MatSizeSpec, diag: float, comm: Comm | None = None
     ) -> Self:
         """Create a diagonal matrix of type CONSTANTDIAGONAL."""
         ...
@@ -595,10 +582,7 @@ class Mat(Object):
         ...
 
     def createPython(
-        self,
-        size: MatSizeSpec,
-        context: Any = None,
-        comm: Comm | None = None
+        self, size: MatSizeSpec, context: Any = None, comm: Comm | None = None
     ) -> Self:
         """Create a PYTHON matrix."""
         ...
@@ -709,7 +693,9 @@ class Mat(Object):
         """Load a matrix."""
         ...
 
-    def convert(self, mat_type: type | str | None = None, out: Mat | None = None) -> Mat:
+    def convert(
+        self, mat_type: type | str | None = None, out: Mat | None = None
+    ) -> Mat:
         """Convert the matrix type."""
         ...
 
@@ -786,7 +772,7 @@ class Mat(Object):
         self,
         rows: Sequence[int],
         cols: Sequence[int],
-        values: ArrayScalar | None = None
+        values: ArrayScalar | None = None,
     ) -> ArrayScalar:
         """Return the values in the zip(rows, cols) positions."""
         ...
@@ -800,27 +786,19 @@ class Mat(Object):
         ...
 
     def getRowIJ(
-        self,
-        symmetric: bool = False,
-        compressed: bool = False
+        self, symmetric: bool = False, compressed: bool = False
     ) -> tuple[ArrayInt, ArrayInt]:
         """Return the CSR representation of the local sparsity pattern."""
         ...
 
     def getColumnIJ(
-        self,
-        symmetric: bool = False,
-        compressed: bool = False
+        self, symmetric: bool = False, compressed: bool = False
     ) -> tuple[ArrayInt, ArrayInt]:
         """Return the CSC representation of the local sparsity pattern."""
         ...
 
     def setValue(
-        self,
-        row: int,
-        col: int,
-        value: Scalar,
-        addv: InsertModeSpec = None
+        self, row: int, col: int, value: Scalar, addv: InsertModeSpec = None
     ) -> None:
         """Set a value to the (row, col) entry of the matrix."""
         ...
@@ -830,7 +808,7 @@ class Mat(Object):
         rows: Sequence[int],
         cols: Sequence[int],
         values: Sequence[Scalar],
-        addv: InsertModeSpec = None
+        addv: InsertModeSpec = None,
     ) -> None:
         """Set values to the rows ⊗ cols entries of the matrix."""
         ...
@@ -845,15 +823,13 @@ class Mat(Object):
         J: Sequence[int],
         V: Sequence[Scalar],
         addv: InsertModeSpec = None,
-        rowmap: Sequence[int] | None = None
+        rowmap: Sequence[int] | None = None,
     ) -> None:
         """Set a subset of values stored in CSR format."""
         ...
 
     def setValuesCOO(
-        self,
-        coo_v: Sequence[Scalar],
-        addv: InsertModeSpec = None
+        self, coo_v: Sequence[Scalar], addv: InsertModeSpec = None
     ) -> None:
         """Set values after preallocation with coordinate format."""
         ...
@@ -863,7 +839,7 @@ class Mat(Object):
         I: Sequence[int],
         J: Sequence[int],
         V: Sequence[Scalar],
-        addv: InsertModeSpec = None
+        addv: InsertModeSpec = None,
     ) -> None:
         """Set values stored in CSR format."""
         ...
@@ -873,12 +849,14 @@ class Mat(Object):
         rows: Sequence[int],
         cols: Sequence[int],
         values: Sequence[Scalar],
-        addv: InsertModeSpec = None
+        addv: InsertModeSpec = None,
     ) -> None:
         """Set values to the rows ⊗ col block entries of the matrix."""
         ...
 
-    def setValuesBlockedRCV(self, R: Any, C: Any, V: Any, addv: InsertModeSpec = None) -> None:
+    def setValuesBlockedRCV(
+        self, R: Any, C: Any, V: Any, addv: InsertModeSpec = None
+    ) -> None:
         """Undocumented."""
         ...
 
@@ -888,7 +866,7 @@ class Mat(Object):
         J: Sequence[int],
         V: Sequence[Scalar],
         addv: InsertModeSpec = None,
-        rowmap: Sequence[int] | None = None
+        rowmap: Sequence[int] | None = None,
     ) -> None:
         """Set a subset of values stored in block CSR format."""
         ...
@@ -898,7 +876,7 @@ class Mat(Object):
         I: Sequence[int],
         J: Sequence[int],
         V: Sequence[Scalar],
-        addv: InsertModeSpec = None
+        addv: InsertModeSpec = None,
     ) -> None:
         """Set values stored in block CSR format."""
         ...
@@ -912,11 +890,7 @@ class Mat(Object):
         ...
 
     def setValueLocal(
-        self,
-        row: int,
-        col: int,
-        value: Scalar,
-        addv: InsertModeSpec = None
+        self, row: int, col: int, value: Scalar, addv: InsertModeSpec = None
     ) -> None:
         """Set a value to the (row, col) entry of the matrix in local ordering."""
         ...
@@ -926,12 +900,14 @@ class Mat(Object):
         rows: Sequence[int],
         cols: Sequence[int],
         values: Sequence[Scalar],
-        addv: InsertModeSpec = None
+        addv: InsertModeSpec = None,
     ) -> None:
         """Set values to the rows ⊗ col entries of the matrix in local ordering."""
         ...
 
-    def setValuesLocalRCV(self, R: Any, C: Any, V: Any, addv: InsertModeSpec = None) -> None:
+    def setValuesLocalRCV(
+        self, R: Any, C: Any, V: Any, addv: InsertModeSpec = None
+    ) -> None:
         """Undocumented."""
         ...
 
@@ -941,7 +917,7 @@ class Mat(Object):
         J: Sequence[int],
         V: Sequence[Scalar],
         addv: InsertModeSpec = None,
-        rowmap: Sequence[int] | None = None
+        rowmap: Sequence[int] | None = None,
     ) -> None:
         """Set a subset of values stored in CSR format."""
         ...
@@ -951,7 +927,7 @@ class Mat(Object):
         I: Sequence[int],
         J: Sequence[int],
         V: Sequence[Scalar],
-        addv: InsertModeSpec = None
+        addv: InsertModeSpec = None,
     ) -> None:
         """Set values stored in CSR format."""
         ...
@@ -961,12 +937,14 @@ class Mat(Object):
         rows: Sequence[int],
         cols: Sequence[int],
         values: Sequence[Scalar],
-        addv: InsertModeSpec = None
+        addv: InsertModeSpec = None,
     ) -> None:
         """Set values to the rows ⊗ col block entries of the matrix in local ordering."""
         ...
 
-    def setValuesBlockedLocalRCV(self, R: Any, C: Any, V: Any, addv: InsertModeSpec = None) -> None:
+    def setValuesBlockedLocalRCV(
+        self, R: Any, C: Any, V: Any, addv: InsertModeSpec = None
+    ) -> None:
         """Undocumented."""
         ...
 
@@ -976,7 +954,7 @@ class Mat(Object):
         J: Sequence[int],
         V: Sequence[Scalar],
         addv: InsertModeSpec = None,
-        rowmap: Sequence[int] | None = None
+        rowmap: Sequence[int] | None = None,
     ) -> None:
         """Set a subset of values stored in block CSR format."""
         ...
@@ -986,13 +964,15 @@ class Mat(Object):
         I: Sequence[int],
         J: Sequence[int],
         V: Sequence[Scalar],
-        addv: InsertModeSpec = None
+        addv: InsertModeSpec = None,
     ) -> None:
         """Set values stored in block CSR format."""
         ...
 
     # Stencil
-    def setStencil(self, dims: DimsSpec, starts: DimsSpec | None = None, dof: int = 1) -> None:
+    def setStencil(
+        self, dims: DimsSpec, starts: DimsSpec | None = None, dof: int = 1
+    ) -> None:
         """Set matrix stencil."""
         ...
 
@@ -1001,12 +981,14 @@ class Mat(Object):
         row: MatStencil,
         col: MatStencil,
         value: Sequence[Scalar],
-        addv: InsertModeSpec = None
+        addv: InsertModeSpec = None,
     ) -> None:
         """Set a value to row and col stencil."""
         ...
 
-    def setValueStagStencil(self, row: Any, col: Any, value: Any, addv: InsertModeSpec = None) -> None:
+    def setValueStagStencil(
+        self, row: Any, col: Any, value: Any, addv: InsertModeSpec = None
+    ) -> None:
         """Not implemented."""
         ...
 
@@ -1015,12 +997,14 @@ class Mat(Object):
         row: MatStencil,
         col: MatStencil,
         value: Sequence[Scalar],
-        addv: InsertModeSpec = None
+        addv: InsertModeSpec = None,
     ) -> None:
         """Set a block of values to row and col stencil."""
         ...
 
-    def setValueBlockedStagStencil(self, row: Any, col: Any, value: Any, addv: InsertModeSpec = None) -> None:
+    def setValueBlockedStagStencil(
+        self, row: Any, col: Any, value: Any, addv: InsertModeSpec = None
+    ) -> None:
         """Not implemented."""
         ...
 
@@ -1030,7 +1014,7 @@ class Mat(Object):
         rows: IS | Sequence[int],
         diag: Scalar = 1.0,
         x: Vec | None = None,
-        b: Vec | None = None
+        b: Vec | None = None,
     ) -> None:
         """Zero selected rows of the matrix."""
         ...
@@ -1040,7 +1024,7 @@ class Mat(Object):
         rows: IS | Sequence[int],
         diag: Scalar = 1.0,
         x: Vec | None = None,
-        b: Vec | None = None
+        b: Vec | None = None,
     ) -> None:
         """Zero selected rows of the matrix in local ordering."""
         ...
@@ -1050,7 +1034,7 @@ class Mat(Object):
         rows: IS | Sequence[int],
         diag: Scalar = 1.0,
         x: Vec | None = None,
-        b: Vec | None = None
+        b: Vec | None = None,
     ) -> None:
         """Zero selected rows and columns of the matrix."""
         ...
@@ -1060,7 +1044,7 @@ class Mat(Object):
         rows: IS | Sequence[int],
         diag: Scalar = 1.0,
         x: Vec | None = None,
-        b: Vec | None = None
+        b: Vec | None = None,
     ) -> None:
         """Zero selected rows and columns of the matrix in local ordering."""
         ...
@@ -1070,7 +1054,7 @@ class Mat(Object):
         rows: Sequence[MatStencil],
         diag: Scalar = 1.0,
         x: Vec | None = None,
-        b: Vec | None = None
+        b: Vec | None = None,
     ) -> None:
         """Zero selected rows and columns of the matrix."""
         ...
@@ -1108,10 +1092,9 @@ class Mat(Object):
     @overload
     def createVecs(self, side: None = None) -> tuple[Vec, Vec]: ...
     @overload
-    def createVecs(self, side: Literal['r', 'R', 'right', 'Right', 'RIGHT']) -> Vec: ...
+    def createVecs(self, side: Literal["r", "R", "right", "Right", "RIGHT"]) -> Vec: ...
     @overload
-    def createVecs(self, side: Literal['l', 'L', 'left', 'Left', 'LEFT']) -> Vec: ...
-
+    def createVecs(self, side: Literal["l", "L", "left", "Left", "LEFT"]) -> Vec: ...
     def createVecRight(self) -> Vec:
         """Return a right vector, a vector that the matrix can be multiplied against."""
         ...
@@ -1129,10 +1112,7 @@ class Mat(Object):
         ...
 
     def getRedundantMatrix(
-        self,
-        nsubcomm: int,
-        subcomm: Comm | None = None,
-        out: Mat | None = None
+        self, nsubcomm: int, subcomm: Comm | None = None, out: Mat | None = None
     ) -> Mat:
         """Return redundant matrices on subcommunicators."""
         ...
@@ -1216,7 +1196,7 @@ class Mat(Object):
         sortype: int | None = None,
         shift: float = 0.0,
         its: int = 1,
-        lits: int = 1
+        lits: int = 1,
     ) -> None:
         """Compute relaxation (SOR, Gauss-Seidel) sweeps."""
         ...
@@ -1230,10 +1210,7 @@ class Mat(Object):
         ...
 
     def createSubMatrix(
-        self,
-        isrow: IS,
-        iscol: IS | None = None,
-        submat: Mat | None = None
+        self, isrow: IS, iscol: IS | None = None, submat: Mat | None = None
     ) -> Mat:
         """Return a submatrix."""
         ...
@@ -1242,18 +1219,13 @@ class Mat(Object):
         self,
         isrows: IS | Sequence[IS],
         iscols: IS | Sequence[IS] | None = None,
-        submats: Mat | Sequence[Mat] | None = None
+        submats: Mat | Sequence[Mat] | None = None,
     ) -> Sequence[Mat]:
         """Return several sequential submatrices."""
         ...
 
     def createSchurComplement(
-        self,
-        A00: Mat,
-        Ap00: Mat,
-        A01: Mat,
-        A10: Mat,
-        A11: Mat | None = None
+        self, A00: Mat, Ap00: Mat, A01: Mat, A10: Mat, A11: Mat | None = None
     ) -> Self:
         """Create a SCHURCOMPLEMENT matrix."""
         ...
@@ -1262,12 +1234,7 @@ class Mat(Object):
         """Return Schur complement sub-matrices."""
         ...
 
-    def getLocalSubMatrix(
-        self,
-        isrow: IS,
-        iscol: IS,
-        submat: Mat | None = None
-    ) -> Mat:
+    def getLocalSubMatrix(self, isrow: IS, iscol: IS, submat: Mat | None = None) -> Mat:
         """Return a reference to a submatrix specified in local numbering."""
         ...
 
@@ -1305,56 +1272,33 @@ class Mat(Object):
 
     # Matrix-matrix product
     def matMult(
-        self,
-        mat: Mat,
-        result: Mat | None = None,
-        fill: float | None = None
+        self, mat: Mat, result: Mat | None = None, fill: float | None = None
     ) -> Mat:
         """Perform matrix-matrix multiplication C=AB."""
         ...
 
     def matTransposeMult(
-        self,
-        mat: Mat,
-        result: Mat | None = None,
-        fill: float | None = None
+        self, mat: Mat, result: Mat | None = None, fill: float | None = None
     ) -> Mat:
         """Perform matrix-matrix multiplication C=ABᵀ."""
         ...
 
     def transposeMatMult(
-        self,
-        mat: Mat,
-        result: Mat | None = None,
-        fill: float | None = None
+        self, mat: Mat, result: Mat | None = None, fill: float | None = None
     ) -> Mat:
         """Perform matrix-matrix multiplication C=AᵀB."""
         ...
 
-    def ptap(
-        self,
-        P: Mat,
-        result: Mat | None = None,
-        fill: float | None = None
-    ) -> Mat:
+    def ptap(self, P: Mat, result: Mat | None = None, fill: float | None = None) -> Mat:
         """Creates the matrix product C = PᵀAP."""
         ...
 
-    def rart(
-        self,
-        R: Mat,
-        result: Mat | None = None,
-        fill: float | None = None
-    ) -> Mat:
+    def rart(self, R: Mat, result: Mat | None = None, fill: float | None = None) -> Mat:
         """Create the matrix product C = RARᵀ."""
         ...
 
     def matMatMult(
-        self,
-        B: Mat,
-        C: Mat,
-        result: Mat | None = None,
-        fill: float | None = None
+        self, B: Mat, C: Mat, result: Mat | None = None, fill: float | None = None
     ) -> Mat:
         """Perform matrix-matrix-matrix multiplication D=ABC."""
         ...
@@ -1376,25 +1320,19 @@ class Mat(Object):
         """Return a reordering for a matrix to improve a LU factorization."""
         ...
 
-    def reorderForNonzeroDiagonal(
-        self,
-        isrow: IS,
-        iscol: IS,
-        atol: float = 0
-    ) -> None:
+    def reorderForNonzeroDiagonal(self, isrow: IS, iscol: IS, atol: float = 0) -> None:
         """Change a matrix ordering to remove zeros from the diagonal."""
         ...
 
     def factorLU(
-        self,
-        isrow: IS,
-        iscol: IS,
-        options: dict[str, Any] | None = None
+        self, isrow: IS, iscol: IS, options: dict[str, Any] | None = None
     ) -> None:
         """Perform an in-place LU factorization."""
         ...
 
-    def factorSymbolicLU(self, mat: Mat, isrow: IS, iscol: IS, options: Any = None) -> None:
+    def factorSymbolicLU(
+        self, mat: Mat, isrow: IS, iscol: IS, options: Any = None
+    ) -> None:
         """Not implemented."""
         ...
 
@@ -1403,10 +1341,7 @@ class Mat(Object):
         ...
 
     def factorILU(
-        self,
-        isrow: IS,
-        iscol: IS,
-        options: dict[str, Any] | None = None
+        self, isrow: IS, iscol: IS, options: dict[str, Any] | None = None
     ) -> None:
         """Perform an in-place ILU factorization."""
         ...
@@ -1415,11 +1350,7 @@ class Mat(Object):
         """Not implemented."""
         ...
 
-    def factorCholesky(
-        self,
-        isperm: IS,
-        options: dict[str, Any] | None = None
-    ) -> None:
+    def factorCholesky(self, isperm: IS, options: dict[str, Any] | None = None) -> None:
         """Perform an in-place Cholesky factorization."""
         ...
 
@@ -1431,11 +1362,7 @@ class Mat(Object):
         """Not implemented."""
         ...
 
-    def factorICC(
-        self,
-        isperm: IS,
-        options: dict[str, Any] | None = None
-    ) -> None:
+    def factorICC(self, isperm: IS, options: dict[str, Any] | None = None) -> None:
         """Perform an in-place an incomplete Cholesky factorization."""
         ...
 
@@ -1476,11 +1403,7 @@ class Mat(Object):
         """Set the local matrix stored inside a Type.IS."""
         ...
 
-    def setISPreallocation(
-        self,
-        nnz: Sequence[int],
-        onnz: Sequence[int]
-    ) -> Self:
+    def setISPreallocation(self, nnz: Sequence[int], onnz: Sequence[int]) -> Self:
         """Preallocate memory for an IS parallel matrix."""
         ...
 
@@ -1490,11 +1413,7 @@ class Mat(Object):
         ...
 
     def setLRCMats(
-        self,
-        A: Mat | None,
-        U: Mat,
-        c: Vec | None = None,
-        V: Mat | None = None
+        self, A: Mat | None, U: Mat, c: Vec | None = None, V: Mat | None = None
     ) -> None:
         """Set the constituents of an LRC matrix."""
         ...
@@ -1508,12 +1427,7 @@ class Mat(Object):
         """Compress a hierarchical matrix."""
         ...
 
-    def H2OpusLowRankUpdate(
-        self,
-        U: Mat,
-        V: Mat | None = None,
-        s: float = 1.0
-    ) -> Self:
+    def H2OpusLowRankUpdate(self, U: Mat, V: Mat | None = None, s: float = 1.0) -> Self:
         """Perform a low-rank update of the form self += sUVᵀ."""
         ...
 
@@ -1626,11 +1540,7 @@ class Mat(Object):
         ...
 
     def getDenseSubMatrix(
-        self,
-        rbegin: int = -1,
-        rend: int = -1,
-        cbegin: int = -1,
-        cend: int = -1
+        self, rbegin: int = -1, rend: int = -1, cbegin: int = -1, cend: int = -1
     ) -> Mat:
         """Get access to a submatrix of a DENSE matrix."""
         ...
@@ -1639,15 +1549,12 @@ class Mat(Object):
         """Restore access to a submatrix of a DENSE matrix."""
         ...
 
-    def getDenseColumnVec(self, i: int, mode: AccessModeSpec = 'rw') -> Vec:
+    def getDenseColumnVec(self, i: int, mode: AccessModeSpec = "rw") -> Vec:
         """Return the iᵗʰ column vector of the dense matrix."""
         ...
 
     def restoreDenseColumnVec(
-        self,
-        i: int,
-        mode: AccessModeSpec = 'rw',
-        V: Vec | None = None
+        self, i: int, mode: AccessModeSpec = "rw", V: Vec | None = None
     ) -> None:
         """Restore the iᵗʰ column vector of the dense matrix."""
         ...
@@ -1689,7 +1596,6 @@ class Mat(Object):
 
     @sizes.setter
     def sizes(self, value: MatSizeSpec) -> None: ...
-
     @property
     def size(self) -> tuple[int, int]:
         """Matrix global size."""
@@ -1749,10 +1655,9 @@ class Mat(Object):
         """Return the device type and ID for DLPack."""
         ...
 
-    def toDLPack(self, mode: AccessModeSpec = 'rw') -> Any:
+    def toDLPack(self, mode: AccessModeSpec = "rw") -> Any:
         """Return a DLPack PyCapsule wrapping the matrix data."""
         ...
-
 
 class NullSpace(Object):
     """Nullspace object."""
@@ -1769,7 +1674,7 @@ class NullSpace(Object):
         self,
         constant: bool = False,
         vectors: Sequence[Vec] = (),
-        comm: Comm | None = None
+        comm: Comm | None = None,
     ) -> Self:
         """Create the null space."""
         ...
@@ -1782,7 +1687,7 @@ class NullSpace(Object):
         self,
         function: Callable[[NullSpace, Vec], None] | None,
         args: tuple[Any, ...] | None = None,
-        kargs: dict[str, Any] | None = None
+        kargs: dict[str, Any] | None = None,
     ) -> None:
         """Set the callback to remove the nullspace."""
         ...
@@ -1806,7 +1711,6 @@ class NullSpace(Object):
     def test(self, mat: Mat) -> bool:
         """Return if the claimed null space is valid for a matrix."""
         ...
-
 
 # Type aliases for callback functions
 MatNullFunction = Callable[[NullSpace, Vec], None]

@@ -1,6 +1,5 @@
 """Type stubs for PETSc DT (Discretization Technology) module."""
 
-
 from typing import Self
 
 # Import types from typing module

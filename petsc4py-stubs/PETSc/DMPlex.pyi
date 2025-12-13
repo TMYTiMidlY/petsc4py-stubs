@@ -2209,7 +2209,6 @@ class DMPlex(DM):
         """
         ...
 
-
 class DMPlexTransformType(StrEnum):
     """Transformation types."""
 
@@ -2223,7 +2222,6 @@ class DMPlexTransformType(StrEnum):
     REFINE1D = ...
     EXTRUDE = ...
     TRANSFORMFILTER = ...
-
 
 class DMPlexTransform:
     """Mesh transformations."""

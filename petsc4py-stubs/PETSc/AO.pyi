@@ -1,6 +1,5 @@
 """Type stubs for PETSc AO (Application Ordering) module."""
 
-
 from enum import StrEnum
 from typing import Self, Sequence
 

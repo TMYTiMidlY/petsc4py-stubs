@@ -21,7 +21,6 @@ class MatPartitioningType(StrEnum):
     PARTITIONINGPTSCOTCH = ...
     PARTITIONINGHIERARCH = ...
 
-
 class MatPartitioning(Object):
     """Object for managing the partitioning of a matrix or graph.
 

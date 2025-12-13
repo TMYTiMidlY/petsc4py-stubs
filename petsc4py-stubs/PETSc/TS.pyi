@@ -74,7 +74,6 @@ class TSType(StrEnum):
     CRANK_NICOLSON = ...
     RUNGE_KUTTA = ...
 
-
 class TSRKType(StrEnum):
     """The Runge-Kutta subtype."""
 
@@ -90,7 +89,6 @@ class TSRKType(StrEnum):
     RK6VR = ...
     RK7VR = ...
     RK8VR = ...
-
 
 class TSARKIMEXType(StrEnum):
     """The ARKIMEX subtype."""
@@ -108,7 +106,6 @@ class TSARKIMEXType(StrEnum):
     ARKIMEXARS443 = ...
     ARKIMEX4 = ...
     ARKIMEX5 = ...
-
 
 class TSDIRKType(StrEnum):
     """The DIRK subtype."""
@@ -130,13 +127,11 @@ class TSDIRKType(StrEnum):
     DIRK8616SAL = ...
     DIRKES8516SAL = ...
 
-
 class TSProblemType(IntEnum):
     """Distinguishes linear and nonlinear problems."""
 
     LINEAR = ...
     NONLINEAR = ...
-
 
 class TSEquationType(IntEnum):
     """Distinguishes among types of explicit and implicit equations."""
@@ -155,7 +150,6 @@ class TSEquationType(IntEnum):
     DAE_IMPLICIT_INDEX3 = ...
     DAE_IMPLICIT_INDEXHI = ...
 
-
 class TSExactFinalTime(IntEnum):
     """The method for ending time stepping."""
 
@@ -163,7 +157,6 @@ class TSExactFinalTime(IntEnum):
     STEPOVER = ...
     INTERPOLATE = ...
     MATCHSTEP = ...
-
 
 class TSConvergedReason(IntEnum):
     """The reason the time step is converging."""
@@ -179,7 +172,6 @@ class TSConvergedReason(IntEnum):
     # diverged
     DIVERGED_NONLINEAR_SOLVE = ...
     DIVERGED_STEP_REJECTED = ...
-
 
 class TS(Object):
     """ODE integrator.
@@ -1540,7 +1532,9 @@ class TS(Object):
 
     def getPostStep(
         self,
-    ) -> tuple[TSPostStepFunction, tuple[Any, ...] | None, dict[str, Any] | None] | None:
+    ) -> (
+        tuple[TSPostStepFunction, tuple[Any, ...] | None, dict[str, Any] | None] | None
+    ):
         """Return the poststep function.
 
         Not collective.
@@ -1928,7 +1922,6 @@ class TS(Object):
 
     @appctx.setter
     def appctx(self, value: Any) -> None: ...
-
     @property
     def dm(self) -> DM:
         """The DM."""
@@ -1936,7 +1929,6 @@ class TS(Object):
 
     @dm.setter
     def dm(self, value: DM) -> None: ...
-
     @property
     def problem_type(self) -> ProblemType:
         """The problem type."""
@@ -1944,7 +1936,6 @@ class TS(Object):
 
     @problem_type.setter
     def problem_type(self, value: ProblemType) -> None: ...
-
     @property
     def equation_type(self) -> EquationType:
         """The equation type."""
@@ -1952,7 +1943,6 @@ class TS(Object):
 
     @equation_type.setter
     def equation_type(self, value: EquationType) -> None: ...
-
     @property
     def snes(self) -> SNES:
         """The SNES."""
@@ -1975,7 +1965,6 @@ class TS(Object):
 
     @time.setter
     def time(self, value: float) -> None: ...
-
     @property
     def time_step(self) -> float:
         """The current time step size."""
@@ -1983,7 +1972,6 @@ class TS(Object):
 
     @time_step.setter
     def time_step(self, value: float) -> None: ...
-
     @property
     def step_number(self) -> int:
         """The current step number."""
@@ -1991,7 +1979,6 @@ class TS(Object):
 
     @step_number.setter
     def step_number(self, value: int) -> None: ...
-
     @property
     def max_time(self) -> float:
         """The maximum time."""
@@ -1999,7 +1986,6 @@ class TS(Object):
 
     @max_time.setter
     def max_time(self, value: float) -> None: ...
-
     @property
     def max_steps(self) -> int:
         """The maximum number of steps."""
@@ -2007,7 +1993,6 @@ class TS(Object):
 
     @max_steps.setter
     def max_steps(self, value: int) -> None: ...
-
     @property
     def rtol(self) -> float:
         """The relative tolerance."""
@@ -2015,7 +2000,6 @@ class TS(Object):
 
     @rtol.setter
     def rtol(self, value: float) -> None: ...
-
     @property
     def atol(self) -> float:
         """The absolute tolerance."""
@@ -2023,7 +2007,6 @@ class TS(Object):
 
     @atol.setter
     def atol(self, value: float) -> None: ...
-
     @property
     def reason(self) -> ConvergedReason:
         """The converged reason."""
@@ -2031,7 +2014,6 @@ class TS(Object):
 
     @reason.setter
     def reason(self, value: ConvergedReason) -> None: ...
-
     @property
     def iterating(self) -> bool:
         """Indicates the TS is still iterating."""

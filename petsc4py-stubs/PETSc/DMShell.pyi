@@ -1,6 +1,5 @@
 """Type stubs for PETSc DMShell module."""
 
-
 from typing import Any, Callable, Self, Sequence
 
 from .Comm import Comm

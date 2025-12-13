@@ -1,6 +1,5 @@
 """Type stubs for PETSc Comm module."""
 
-
 from typing import Any
 
 from mpi4py.MPI import Intracomm

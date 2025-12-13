@@ -1,6 +1,5 @@
 """Type stubs for PETSc Log module."""
 
-
 from typing import Any, Callable
 
 from .Viewer import Viewer
@@ -204,7 +203,6 @@ class Log:
         """
         ...
 
-
 class LogStage:
     """Logging support for different stages."""
 
@@ -213,15 +211,9 @@ class LogStage:
         """The log stage identifier."""
         ...
 
-    def __int__(self) -> int:
-        ...
-
-    def __enter__(self) -> LogStage:
-        ...
-
-    def __exit__(self, *exc: Any) -> None:
-        ...
-
+    def __int__(self) -> int: ...
+    def __enter__(self) -> LogStage: ...
+    def __exit__(self, *exc: Any) -> None: ...
     def push(self) -> None:
         """Push a stage on the logging stack.
 
@@ -303,9 +295,7 @@ class LogStage:
         ...
 
     @active.setter
-    def active(self, value: bool) -> None:
-        ...
-
+    def active(self, value: bool) -> None: ...
     def getVisible(self) -> bool:
         """Return whether the stage is visible.
 
@@ -339,9 +329,7 @@ class LogStage:
         ...
 
     @visible.setter
-    def visible(self, value: bool) -> None:
-        ...
-
+    def visible(self, value: bool) -> None: ...
 
 class LogClass:
     """Logging support."""
@@ -351,9 +339,7 @@ class LogClass:
         """The log class identifier."""
         ...
 
-    def __int__(self) -> int:
-        ...
-
+    def __int__(self) -> int: ...
     def getName(self) -> str:
         """Return the log class name."""
         ...
@@ -385,9 +371,7 @@ class LogClass:
         ...
 
     @active.setter
-    def active(self, value: bool) -> None:
-        ...
-
+    def active(self, value: bool) -> None: ...
 
 class LogEvent:
     """Logging support."""
@@ -397,15 +381,9 @@ class LogEvent:
         """The log event identifier."""
         ...
 
-    def __int__(self) -> int:
-        ...
-
-    def __enter__(self) -> LogEvent:
-        ...
-
-    def __exit__(self, *exc: Any) -> None:
-        ...
-
+    def __int__(self) -> int: ...
+    def __enter__(self) -> LogEvent: ...
+    def __exit__(self, *exc: Any) -> None: ...
     def begin(self, *objs: Any) -> None:
         """Log the beginning of a user event.
 
@@ -495,9 +473,7 @@ class LogEvent:
         ...
 
     @active.setter
-    def active(self, value: bool) -> None:
-        ...
-
+    def active(self, value: bool) -> None: ...
     def getActiveAll(self) -> bool:
         """Not implemented."""
         ...
@@ -524,9 +500,7 @@ class LogEvent:
         ...
 
     @active_all.setter
-    def active_all(self, value: bool) -> None:
-        ...
-
+    def active_all(self, value: bool) -> None: ...
     def getPerfInfo(self, stage: int | None = None) -> dict[str, Any]:
         """Get the performance information about the given event in the given event.
 

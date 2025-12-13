@@ -1,6 +1,5 @@
 """Type stubs for PETSc Object module - base class for all PETSc objects."""
 
-
 from typing import Any, Self
 
 from .Comm import Comm

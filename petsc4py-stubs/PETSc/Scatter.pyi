@@ -1,6 +1,5 @@
 """Type stubs for PETSc Scatter module."""
 
-
 from enum import IntEnum, StrEnum
 from typing import Literal, Self
 

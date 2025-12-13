@@ -1,6 +1,5 @@
 """Type stubs for PETSc Sys module."""
 
-
 from typing import Any
 
 from .Comm import Comm

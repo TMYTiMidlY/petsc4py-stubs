@@ -1,6 +1,5 @@
 """Type stubs for PETSc Random module."""
 
-
 from enum import StrEnum
 from typing import Self
 

@@ -1,6 +1,5 @@
 """Type stubs for PETSc DMComposite module."""
 
-
 from typing import Any, Literal, Self, Sequence
 
 # Import types from typing module
@@ -15,7 +14,7 @@ from .Vec import Vec
 
 class DMComposite(DM):
     """A DM object that is used to manage data for a collection of DMs.
-    
+
     DMComposite is used to couple multiple DM objects together, typically
     for multi-physics simulations where different fields may live on
     different meshes or have different discretizations.

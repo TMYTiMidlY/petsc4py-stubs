@@ -1,8 +1,5 @@
 """Type stubs for PETSc Error module."""
 
-
-
-
 class Error(RuntimeError):
     """PETSc Error.
 

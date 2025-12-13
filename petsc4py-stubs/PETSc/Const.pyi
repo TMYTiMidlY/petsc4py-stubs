@@ -31,7 +31,6 @@ NINFINITY: float
 PINFINITY: float
 """Very large positive real value, same as `INFINITY`."""
 
-
 class InsertMode(IntEnum):
     """Insertion mode.
 
@@ -68,7 +67,6 @@ class InsertMode(IntEnum):
     INSERT_BC = ...
     ADD_BC = ...
 
-
 class ScatterMode(IntEnum):
     """Scatter mode.
 
@@ -96,7 +94,6 @@ class ScatterMode(IntEnum):
     REVERSE = ...
     FORWARD_LOCAL = ...
     REVERSE_LOCAL = ...
-
 
 class NormType(IntEnum):
     """Norm type.

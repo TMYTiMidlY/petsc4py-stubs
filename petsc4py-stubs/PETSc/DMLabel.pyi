@@ -1,6 +1,5 @@
 """Type stubs for PETSc DMLabel module."""
 
-
 from typing import Self, Sequence
 
 from .Comm import Comm

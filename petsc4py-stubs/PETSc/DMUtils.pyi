@@ -1,6 +1,5 @@
 """Type stubs for PETSc DMUtils module."""
 
-
 from typing import Self
 
 from .Comm import Comm

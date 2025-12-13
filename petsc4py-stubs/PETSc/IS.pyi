@@ -1,6 +1,5 @@
 """Type stubs for PETSc IS (Index Set) module."""
 
-
 from enum import IntEnum, StrEnum
 from typing import Any, Self, Sequence
 

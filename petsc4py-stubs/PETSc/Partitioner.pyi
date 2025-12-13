@@ -19,7 +19,6 @@ class PartitionerType(StrEnum):
     MATPARTITIONING = ...
     MULTISTAGE = ...
 
-
 class Partitioner(Object):
     """A graph partitioner.
 

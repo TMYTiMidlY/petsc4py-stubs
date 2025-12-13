@@ -1,6 +1,5 @@
 """Type stubs for PETSc KSP module."""
 
-
 from enum import IntEnum, StrEnum
 from typing import Any, Callable, Self, overload
 

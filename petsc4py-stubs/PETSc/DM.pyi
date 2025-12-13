@@ -1,6 +1,5 @@
 """Type stubs for PETSc DM module."""
 
-
 from enum import IntEnum, StrEnum
 from typing import Any, Callable, Literal, Self, Sequence
 

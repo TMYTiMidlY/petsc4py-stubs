@@ -14,12 +14,12 @@ from .Viewer import Viewer
 
 class DSType(StrEnum):
     """The Discrete System types."""
-    BASIC = ...
 
+    BASIC = ...
 
 class DS(Object):
     """Discrete System object.
-    
+
     The DS (Discrete System) is used to encapsulate a discrete system,
     which is a collection of fields discretized over a mesh.
     """
