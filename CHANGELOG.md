@@ -1,3 +1,16 @@
+## v0.1.7 (2025-12-14)
+
+### Fix
+
+- Correctly export class attributes
+- Add garbage collection functions
+- Add Optional type annotation for bsize parameter with default None
+- Remove unnecessary exports
+
+### Refactor
+
+- Add src code from PETSc GitLab repository
+
 ## v0.1.6 (2025-12-14)
 
 ### Fix
