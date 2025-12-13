@@ -1,3 +1,9 @@
+## v0.1.5 (2025-12-13)
+
+### Fix
+
+- Add petsc4py.__main__ and petsc4py.lib
+
 ## v0.1.4 (2025-12-12)
 
 ### Fix
