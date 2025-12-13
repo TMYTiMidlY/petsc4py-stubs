@@ -22,7 +22,7 @@ class DeviceType(IntEnum):
     SYCL = ...
     DEFAULT = ...
 
-class StreamType(IntEnum):
+class DeviceStreamType(IntEnum):
     """The type of stream.
 
     See Also
@@ -184,6 +184,7 @@ class DeviceContext(Object):
 
     """
 
+    StreamType = DeviceStreamType
     JoinMode = DeviceJoinMode
 
     def create(self) -> Self:
@@ -211,7 +212,7 @@ class DeviceContext(Object):
         ...
 
     def getStreamType(self) -> str:
-        """Return the `StreamType`.
+        """Return the `DeviceStreamType`.
 
         Not collective.
 
@@ -222,8 +223,8 @@ class DeviceContext(Object):
         """
         ...
 
-    def setStreamType(self, stream_type: StreamType | str) -> None:
-        """Set the `StreamType`.
+    def setStreamType(self, stream_type: DeviceStreamType | str) -> None:
+        """Set the `DeviceStreamType`.
 
         Not collective.
 
@@ -322,7 +323,7 @@ class DeviceContext(Object):
         ...
 
     def fork(
-        self, n: int, stream_type: StreamType | str | None = None
+        self, n: int, stream_type: DeviceStreamType | str | None = None
     ) -> list[DeviceContext]:
         """Create multiple device contexts which are all logically dependent on this one.
 
@@ -449,7 +450,7 @@ class DeviceContext(Object):
         ...
 
     @stream_type.setter
-    def stream_type(self, stype: StreamType | str) -> None: ...
+    def stream_type(self, stype: DeviceStreamType | str) -> None: ...
     @property
     def device(self) -> Device:
         """The device associated to the device context."""

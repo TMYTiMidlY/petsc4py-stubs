@@ -1921,7 +1921,7 @@ class TAOLineSearch(Object):
     """TAO Line Search."""
 
     Type = TAOLineSearchType
-    Reason = TAOLineSearchConvergedReason
+    ConvergedReason = TAOLineSearchConvergedReason
 
     def view(self, viewer: Viewer | None = None) -> None:
         """View the linesearch object.

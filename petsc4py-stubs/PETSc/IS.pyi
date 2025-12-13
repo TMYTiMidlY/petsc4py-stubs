@@ -678,6 +678,18 @@ class IS(Object):
         """The indices as an array (alias for indices)."""
         ...
 
+class GLMapMode(StrEnum):
+    """Mapping behavior when global indices are missing."""
+
+    MASK = ...
+    DROP = ...
+
+class LGMapType(StrEnum):
+    """Local to global map types."""
+
+    BASIC = ...
+    HASH = ...
+
 class LGMap(Object):
     """Local-to-global mapping.
 
@@ -688,14 +700,8 @@ class LGMap(Object):
     petsc.ISLocalToGlobalMapping
     """
 
-    class MapMode(IntEnum):
-        """Mapping mode."""
-
-        BASIC = ...
-        MASK = ...
-        DROP = ...
-
-    Mode = MapMode
+    MapMode = GLMapMode
+    Type = LGMapType
 
     def view(self, viewer: Viewer | None = None) -> None:
         """View the local-to-global mapping.
@@ -885,7 +891,7 @@ class LGMap(Object):
         ...
 
     def applyInverse(
-        self, indices: Sequence[int], mode: MapMode | int | None = None
+        self, indices: Sequence[int], mode: GLMapMode | int | None = None
     ) -> ArrayInt:
         """Apply the inverse of the local-to-global mapping.
 
@@ -905,7 +911,7 @@ class LGMap(Object):
         ...
 
     def applyBlockInverse(
-        self, indices: Sequence[int], mode: MapMode | int | None = None
+        self, indices: Sequence[int], mode: GLMapMode | int | None = None
     ) -> ArrayInt:
         """Apply the inverse of the local-to-global block mapping.
 
