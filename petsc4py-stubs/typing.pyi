@@ -14,7 +14,7 @@ from typing import (
 from numpy import ndarray, dtype, bool_, intp, floating, complexfloating
 
 # Forward declarations for callback types
-from .PETSc.Const import InsertMode, ScatterMode, NormType
+from .PETSc import InsertMode, ScatterMode, NormType
 from .PETSc.Object import Object
 from .PETSc.Vec import Vec
 from .PETSc.Mat import Mat, NullSpace
