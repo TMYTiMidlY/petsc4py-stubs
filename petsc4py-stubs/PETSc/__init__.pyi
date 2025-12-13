@@ -108,9 +108,38 @@ from .Viewer import (
     ViewerHDF5,
 )
 
-# Garbage collection functions (placeholder)
-def garbage_cleanup(comm: Comm | None = ...) -> None: ...
-def garbage_view(comm: Comm | None = ...) -> None: ...
+# Garbage collection functions
+def garbage_cleanup(comm: Comm | None = ...) -> None:
+    """Clean up unused PETSc objects.
+
+    Collective.
+
+    Parameters
+    ----------
+    comm : Comm | None, optional
+        MPI communicator. If not provided or None, COMM_WORLD is used.
+
+    Returns
+    -------
+    None
+    """
+    ...
+
+def garbage_view(comm: Comm | None = ...) -> None:
+    """Print summary of the garbage PETSc objects.
+
+    Collective.
+
+    Parameters
+    ----------
+    comm : Comm | None, optional
+        MPI communicator for printing. If not provided, COMM_WORLD is used.
+
+    Returns
+    -------
+    None
+    """
+    ...
 
 __all__ = [
     # Base types
