@@ -1,9 +1,5 @@
 # VS Code
 settings.json
-
-# petsc4py-stubs
-*.pyx
-*.pxi
 *.prompt.md
 
 
