@@ -1,16 +1,15 @@
 """Type stubs for PETSc IS (Index Set) module."""
 
 
-from enum import StrEnum, IntEnum
-from typing import Any, Sequence, Self
-
-from .Object import Object
-
-from .Comm import Comm
-from .Viewer import Viewer
+from enum import IntEnum, StrEnum
+from typing import Any, Self, Sequence
 
 # Import types from typing module
 from petsc4py.typing import ArrayInt
+
+from .Comm import Comm
+from .Object import Object
+from .Viewer import Viewer
 
 class ISType(StrEnum):
     """The index set types."""

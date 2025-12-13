@@ -7,34 +7,33 @@ from typing import (
     Self,
 )
 
-from .Object import Object
-
-from .Comm import Comm
-from .Vec import Vec
-from .Mat import Mat
-from .Viewer import Viewer
-from .KSP import KSP
-from .IS import IS
-
 # Import types from typing module
 from petsc4py.typing import (
-    TAOObjectiveFunction,
-    TAOResidualFunction,
-    TAOJacobianResidualFunction,
-    TAOGradientFunction,
-    TAOObjectiveGradientFunction,
-    TAOVariableBoundsFunction,
     TAOConstraintsFunction,
+    TAOConstraintsJacobianFunction,
+    TAOConvergedFunction,
+    TAOGradientFunction,
     TAOHessianFunction,
     TAOJacobianFunction,
-    TAOConstraintsJacobianFunction,
-    TAOUpdateFunction,
-    TAOConvergedFunction,
-    TAOMonitorFunction,
-    TAOLSObjectiveFunction,
+    TAOJacobianResidualFunction,
     TAOLSGradientFunction,
+    TAOLSObjectiveFunction,
     TAOLSObjectiveGradientFunction,
+    TAOMonitorFunction,
+    TAOObjectiveFunction,
+    TAOObjectiveGradientFunction,
+    TAOResidualFunction,
+    TAOUpdateFunction,
+    TAOVariableBoundsFunction,
 )
+
+from .Comm import Comm
+from .IS import IS
+from .KSP import KSP
+from .Mat import Mat
+from .Object import Object
+from .Vec import Vec
+from .Viewer import Viewer
 
 class TAOType(StrEnum):
     """TAO solver type.

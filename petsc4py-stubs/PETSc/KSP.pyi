@@ -2,32 +2,32 @@
 
 
 from enum import IntEnum, StrEnum
-from typing import Any, Callable, overload, Self
-from numpy import ndarray, dtype
+from typing import Any, Callable, Self, overload
 
-from .Object import Object
-
-from .Comm import Comm
-from .Vec import Vec
-from .Mat import Mat
-from .Viewer import Viewer
-from .DM import DM
-from .PC import PC
+from numpy import dtype, ndarray
 
 # Import types from typing module
 from petsc4py.typing import (
-    Scalar,
+    ArrayComplex,
     ArrayInt,
     ArrayReal,
     ArrayScalar,
-    ArrayComplex,
-    KSPRHSFunction,
-    KSPOperatorsFunction,
     KSPConvergenceTestFunction,
     KSPMonitorFunction,
-    KSPPreSolveFunction,
+    KSPOperatorsFunction,
     KSPPostSolveFunction,
+    KSPPreSolveFunction,
+    KSPRHSFunction,
+    Scalar,
 )
+
+from .Comm import Comm
+from .DM import DM
+from .Mat import Mat
+from .Object import Object
+from .PC import PC
+from .Vec import Vec
+from .Viewer import Viewer
 
 class KSPType(StrEnum):
     """KSP Type.

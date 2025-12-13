@@ -3,14 +3,14 @@
 
 from typing import Self, Sequence
 
-from .Object import Object
-from .Comm import Comm
-from .Viewer import Viewer
-from .IS import IS
-from .SF import SF
-
 # Import types from typing module
 from petsc4py.typing import ArrayInt
+
+from .Comm import Comm
+from .IS import IS
+from .Object import Object
+from .SF import SF
+from .Viewer import Viewer
 
 class Section(Object):
     """Mapping from integers in a range to unstructured set of integers.

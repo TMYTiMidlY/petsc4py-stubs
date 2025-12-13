@@ -2,6 +2,7 @@
 
 
 from typing import Any
+
 from mpi4py.MPI import Intracomm
 
 class Comm:

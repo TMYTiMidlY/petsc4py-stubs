@@ -2,12 +2,12 @@
 
 
 from enum import StrEnum
-from typing import Sequence, Self
+from typing import Self, Sequence
 
-from .Object import Object
 from .Comm import Comm
-from .Viewer import Viewer
 from .IS import IS
+from .Object import Object
+from .Viewer import Viewer
 
 class AOType(StrEnum):
     """The application ordering types."""

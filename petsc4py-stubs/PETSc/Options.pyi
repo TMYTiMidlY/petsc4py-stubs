@@ -1,19 +1,19 @@
 """Type stubs for PETSc Options module."""
 
 
-from typing import Sequence, Self
-
-from .Object import Object
-from .Viewer import Viewer
+from typing import Self, Sequence
 
 # Import types from typing module
 from petsc4py.typing import (
-    Scalar,
+    ArrayBool,
     ArrayInt,
     ArrayReal,
     ArrayScalar,
-    ArrayBool,
+    Scalar,
 )
+
+from .Object import Object
+from .Viewer import Viewer
 
 class Options:
     """The options database object.

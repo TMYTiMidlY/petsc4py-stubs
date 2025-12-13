@@ -5,7 +5,6 @@ from typing import Any, Callable
 
 from .Viewer import Viewer
 
-
 class Log:
     """Logging support."""
 

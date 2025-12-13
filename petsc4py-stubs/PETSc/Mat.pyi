@@ -1,50 +1,38 @@
 """Type stubs for PETSc Mat module."""
 
 from enum import IntEnum, StrEnum
-from typing import (
-    Any,
-    Callable,
-    Literal,
-    Sequence,
-    overload,
-    Self
-)
-from numpy import ndarray, dtype
-
-from .Object import Object
-from .IS import IS, LGMap
-
-from .Comm import Comm
-from .Vec import Vec
-from .Viewer import Viewer
-from .Scatter import Scatter
-from .DM import DM
-from .KSP import KSP
-from .Random import Random
+from typing import Any, Callable, Literal, Self, Sequence, overload
 
 # Import types from typing module
 from petsc4py.typing import (
-    Scalar,
+    AccessModeSpec,
+    ArrayBool,
     ArrayInt,
     ArrayReal,
     ArrayScalar,
-    ArrayBool,
-    LayoutSizeSpec,
-    MatSizeSpec,
-    MatBlockSizeSpec,
-    NNZSpec,
     CSRIndicesSpec,
     CSRSpec,
-    InsertModeSpec,
-    MatAssemblySpec,
-    AccessModeSpec,
-    NormTypeSpec,
     DimsSpec,
+    InsertModeSpec,
+    LayoutSizeSpec,
+    MatAssemblySpec,
+    MatBlockSizeSpec,
     MatNullFunction,
+    MatSizeSpec,
+    NNZSpec,
+    NormTypeSpec,
+    Scalar,
 )
 
-
-
+from .Comm import Comm
+from .DM import DM
+from .IS import IS, LGMap
+from .KSP import KSP
+from .Object import Object
+from .Random import Random
+from .Scatter import Scatter
+from .Vec import Vec
+from .Viewer import Viewer
 
 class MatType(StrEnum):
     """Matrix type."""

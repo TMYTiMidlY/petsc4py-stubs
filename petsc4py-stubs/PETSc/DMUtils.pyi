@@ -3,9 +3,10 @@
 
 from typing import Self
 
+from .Comm import Comm
+
 # Import types from other modules
 from .DM import DM
-from .Comm import Comm
 from .Vec import Vec
 
 class DMInterpolation:

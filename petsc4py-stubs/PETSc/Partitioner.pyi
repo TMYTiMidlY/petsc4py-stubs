@@ -1,12 +1,11 @@
 """Type stubs for PETSc Partitioner module."""
 
 from enum import StrEnum
-from typing import Sequence, Self
+from typing import Self, Sequence
 
-from .Object import Object
 from .Comm import Comm
+from .Object import Object
 from .Viewer import Viewer
-
 
 class PartitionerType(StrEnum):
     """The partitioner types."""

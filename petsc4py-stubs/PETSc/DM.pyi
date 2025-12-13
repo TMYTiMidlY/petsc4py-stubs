@@ -2,33 +2,34 @@
 
 
 from enum import IntEnum, StrEnum
-from typing import Any, Callable, Literal, Sequence, Self
-from numpy import ndarray, dtype
+from typing import Any, Callable, Literal, Self, Sequence
 
-from .Object import Object
-from .IS import IS, LGMap
-from .Comm import Comm
-from .Vec import Vec
-from .Mat import Mat
-from .Viewer import Viewer
-from .Section import Section
-from .SF import SF
-from .FE import FE
-from .DMLabel import DMLabel
-from .DS import DS
+from numpy import dtype, ndarray
 
 # Import types from typing module
 from petsc4py.typing import (
-    Scalar,
     ArrayInt,
     ArrayReal,
     ArrayScalar,
-    InsertModeSpec,
-    SNESFunction,
-    SNESJacobianFunction,
     DMCoarsenHookFunction,
     DMRestrictHookFunction,
+    InsertModeSpec,
+    Scalar,
+    SNESFunction,
+    SNESJacobianFunction,
 )
+
+from .Comm import Comm
+from .DMLabel import DMLabel
+from .DS import DS
+from .FE import FE
+from .IS import IS, LGMap
+from .Mat import Mat
+from .Object import Object
+from .Section import Section
+from .SF import SF
+from .Vec import Vec
+from .Viewer import Viewer
 
 class DMType(StrEnum):
     """DM types."""

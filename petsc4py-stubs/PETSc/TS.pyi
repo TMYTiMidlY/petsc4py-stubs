@@ -4,44 +4,41 @@ from enum import IntEnum, StrEnum
 from typing import (
     Any,
     Callable,
-    Sequence,
     Self,
+    Sequence,
 )
-from numpy import ndarray, dtype
-
-from .Object import Object
-
-from .Comm import Comm
-from .Vec import Vec
-from .Mat import Mat
-from .Viewer import Viewer
-from .DM import DM
-from .KSP import KSP
-from .SNES import SNES
-from .IS import IS
 
 # Import types from typing module
 from petsc4py.typing import (
-    Scalar,
     ArrayInt,
     ArrayReal,
     ArrayScalar,
-    TSRHSFunction,
-    TSRHSJacobian,
-    TSRHSJacobianP,
-    TSIFunction,
-    TSIJacobian,
-    TSIJacobianP,
+    Scalar,
     TSI2Function,
     TSI2Jacobian,
     TSI2JacobianP,
-    TSMonitorFunction,
-    TSPreStepFunction,
-    TSPostStepFunction,
+    TSIFunction,
+    TSIJacobian,
+    TSIJacobianP,
     TSIndicatorFunction,
+    TSMonitorFunction,
     TSPostEventFunction,
+    TSPostStepFunction,
+    TSPreStepFunction,
+    TSRHSFunction,
+    TSRHSJacobian,
+    TSRHSJacobianP,
 )
 
+from .Comm import Comm
+from .DM import DM
+from .IS import IS
+from .KSP import KSP
+from .Mat import Mat
+from .Object import Object
+from .SNES import SNES
+from .Vec import Vec
+from .Viewer import Viewer
 
 class TSType(StrEnum):
     """The time stepping method."""

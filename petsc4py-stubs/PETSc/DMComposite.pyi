@@ -1,23 +1,17 @@
 """Type stubs for PETSc DMComposite module."""
 
 
-from typing import (
-    Any,
-    Literal,
-    Sequence,
-    Self
-)
-
-# Import types from other modules
-from .DM import DM
-from .IS import IS, LGMap
-
-from .Comm import Comm
-from .Vec import Vec
+from typing import Any, Literal, Self, Sequence
 
 # Import types from typing module
 from petsc4py.typing import InsertModeSpec
 
+from .Comm import Comm
+
+# Import types from other modules
+from .DM import DM
+from .IS import IS, LGMap
+from .Vec import Vec
 
 class DMComposite(DM):
     """A DM object that is used to manage data for a collection of DMs.

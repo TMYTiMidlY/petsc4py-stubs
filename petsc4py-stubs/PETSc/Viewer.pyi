@@ -3,9 +3,8 @@
 from enum import IntEnum, StrEnum
 from typing import Any, Literal, Self
 
-from .Object import Object
-
 from .Comm import Comm
+from .Object import Object
 
 class ViewerType(StrEnum):
     """Viewer type."""

@@ -3,13 +3,14 @@
 
 from typing import Self
 
-# Import types from other modules
-from .Object import Object
-from .Comm import Comm
-from .Viewer import Viewer
-
 # Import types from typing module
 from petsc4py.typing import ArrayReal
+
+from .Comm import Comm
+
+# Import types from other modules
+from .Object import Object
+from .Viewer import Viewer
 
 class Quad(Object):
     """Quadrature rule for integration.

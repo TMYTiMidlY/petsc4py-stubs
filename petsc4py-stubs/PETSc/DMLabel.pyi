@@ -1,14 +1,14 @@
 """Type stubs for PETSc DMLabel module."""
 
 
-from typing import Sequence, Self
+from typing import Self, Sequence
 
-from .Object import Object
 from .Comm import Comm
-from .Viewer import Viewer
 from .IS import IS
-from .SF import SF
+from .Object import Object
 from .Section import Section
+from .SF import SF
+from .Viewer import Viewer
 
 class DMLabel(Object):
     """An object representing a subset of mesh entities from a `DM`.

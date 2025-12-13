@@ -3,14 +3,14 @@
 from enum import StrEnum
 from typing import Self
 
-from .Object import Object
-from .Comm import Comm
-from .Viewer import Viewer
-from .DM import DM
-from .DT import Quad
-
 # Import types from typing module
 from petsc4py.typing import ArrayInt
+
+from .Comm import Comm
+from .DM import DM
+from .DT import Quad
+from .Object import Object
+from .Viewer import Viewer
 
 class SpaceType(StrEnum):
     """The function space types."""

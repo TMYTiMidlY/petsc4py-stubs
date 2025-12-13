@@ -1,26 +1,26 @@
 """Type stubs for PETSc DMPlex module."""
 
 from enum import StrEnum
-from typing import Sequence, Self
-
-from .DM import DM, InsertModeSpec
-from .Comm import Comm
-from .Vec import Vec
-from .Mat import Mat
-from .Viewer import Viewer
-from .Section import Section
-from .SF import SF
-from .IS import IS
-from .DMLabel import DMLabel
-from .Partitioner import Partitioner
+from typing import Self, Sequence
 
 # Import types from typing module
 from petsc4py.typing import (
-    Scalar,
     ArrayInt,
     ArrayReal,
     ArrayScalar,
+    Scalar,
 )
+
+from .Comm import Comm
+from .DM import DM, InsertModeSpec
+from .DMLabel import DMLabel
+from .IS import IS
+from .Mat import Mat
+from .Partitioner import Partitioner
+from .Section import Section
+from .SF import SF
+from .Vec import Vec
+from .Viewer import Viewer
 
 class DMPlex(DM):
     """Encapsulate an unstructured mesh.

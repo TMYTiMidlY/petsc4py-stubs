@@ -1,22 +1,7 @@
 """Type stubs for PETSc PC module."""
 
 from enum import IntEnum, StrEnum
-from typing import (
-    Any,
-    Callable,
-    Sequence,
-    Self
-)
-
-from .Object import Object
-from .IS import IS
-from .Comm import Comm
-from .Vec import Vec
-from .Mat import Mat
-from .Viewer import Viewer
-from .DM import DM
-from .Section import Section
-from .KSP import KSP
+from typing import Any, Callable, Self, Sequence
 
 # Import types from typing module
 from petsc4py.typing import (
@@ -24,6 +9,15 @@ from petsc4py.typing import (
     CSRIndicesSpec,
 )
 
+from .Comm import Comm
+from .DM import DM
+from .IS import IS
+from .KSP import KSP
+from .Mat import Mat
+from .Object import Object
+from .Section import Section
+from .Vec import Vec
+from .Viewer import Viewer
 
 # Callback type aliases
 PCApplyFunction = Callable[["PC", Vec, Vec, Any], None]

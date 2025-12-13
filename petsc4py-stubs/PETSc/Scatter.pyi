@@ -2,20 +2,19 @@
 
 
 from enum import IntEnum, StrEnum
-from typing import Self, Literal
-
-from .Object import Object
-from .IS import IS
-
-from .Vec import Vec
-from .Viewer import Viewer
+from typing import Literal, Self
 
 # Import types from typing module
 from petsc4py.typing import (
-    Scalar,
     InsertModeSpec,
+    Scalar,
     ScatterModeSpec,
 )
+
+from .IS import IS
+from .Object import Object
+from .Vec import Vec
+from .Viewer import Viewer
 
 class ScatterType(StrEnum):
     """Scatter type.

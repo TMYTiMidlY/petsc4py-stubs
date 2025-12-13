@@ -5,38 +5,38 @@ from typing import (
     Any,
     Callable,
     Literal,
-    Sequence,
     Self,
+    Sequence,
 )
-from numpy import ndarray, dtype
 
-from .Object import Object
-
-from .Comm import Comm
-from .Vec import Vec
-from .Mat import Mat
-from .Viewer import Viewer
-from .DM import DM, Section
-from .KSP import KSP
-from .PC import PC
-from .IS import IS
+from numpy import dtype, ndarray
 
 # Import types from typing module
 from petsc4py.typing import (
-    Scalar,
     ArrayInt,
     ArrayReal,
     ArrayScalar,
-    SNESGuessFunction,
-    SNESFunction,
-    SNESUpdateFunction,
-    SNESJacobianFunction,
-    SNESObjFunction,
-    SNESNGSFunction,
+    Scalar,
     SNESConvergedFunction,
-    SNESMonitorFunction,
+    SNESFunction,
+    SNESGuessFunction,
+    SNESJacobianFunction,
     SNESLSPreFunction,
+    SNESMonitorFunction,
+    SNESNGSFunction,
+    SNESObjFunction,
+    SNESUpdateFunction,
 )
+
+from .Comm import Comm
+from .DM import DM, Section
+from .IS import IS
+from .KSP import KSP
+from .Mat import Mat
+from .Object import Object
+from .PC import PC
+from .Vec import Vec
+from .Viewer import Viewer
 
 class SNESType(StrEnum):
     """SNES solver type.

@@ -4,13 +4,12 @@
 from enum import StrEnum
 from typing import Self
 
-from .Object import Object
-
-from .Comm import Comm
-from .Viewer import Viewer
-
 # Import types from typing module
 from petsc4py.typing import Scalar
+
+from .Comm import Comm
+from .Object import Object
+from .Viewer import Viewer
 
 class RandomType(StrEnum):
     """The random number generator type."""

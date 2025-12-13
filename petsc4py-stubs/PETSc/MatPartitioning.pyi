@@ -3,12 +3,11 @@
 from enum import StrEnum
 from typing import Self
 
-from .Object import Object
 from .Comm import Comm
-from .Viewer import Viewer
-from .Mat import Mat
 from .IS import IS
-
+from .Mat import Mat
+from .Object import Object
+from .Viewer import Viewer
 
 class MatPartitioningType(StrEnum):
     """The partitioning types."""

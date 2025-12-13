@@ -1,18 +1,16 @@
 """Type stubs for PETSc DS (Discrete System) module."""
 
 from enum import StrEnum
-from typing import (
-    Self
-)
-
-# Import types from other modules
-from .Object import Object
-from .Comm import Comm
-from .Viewer import Viewer
+from typing import Self
 
 # Import types from typing module
 from petsc4py.typing import ArrayInt
 
+from .Comm import Comm
+
+# Import types from other modules
+from .Object import Object
+from .Viewer import Viewer
 
 class DSType(StrEnum):
     """The Discrete System types."""

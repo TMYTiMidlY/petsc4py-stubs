@@ -5,13 +5,11 @@ from typing import Self
 
 from numpy import ndarray
 
-from .Object import Object
-
 from .Comm import Comm
-from .Viewer import Viewer
-from .Space import Space, DualSpace
 from .DT import Quad
-
+from .Object import Object
+from .Space import DualSpace, Space
+from .Viewer import Viewer
 
 class FEType(StrEnum):
     """The finite element types."""

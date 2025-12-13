@@ -1,18 +1,20 @@
 """Type stubs for PETSc DMSwarm module."""
 
 from enum import IntEnum
-from typing import Sequence, Self
-from numpy import ndarray, dtype
+from typing import Self, Sequence
+
+from numpy import dtype, ndarray
+
+# Import types from typing module
+from petsc4py.typing import ScatterModeSpec
+
+from .Comm import Comm
 
 # Import types from other modules
 from .DM import DM, InsertModeSpec
 from .Object import Object
-from .Comm import Comm
 from .Vec import Vec
 from .Viewer import Viewer
-
-# Import types from typing module
-from petsc4py.typing import ScatterModeSpec
 
 class DMSwarmType(IntEnum):
     """Swarm types."""

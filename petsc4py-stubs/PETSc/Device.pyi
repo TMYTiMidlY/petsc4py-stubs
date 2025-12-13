@@ -3,10 +3,9 @@
 from enum import IntEnum
 from typing import Self
 
+from .Comm import Comm
 from .Object import Object
 from .Viewer import Viewer
-
-from .Comm import Comm
 
 class DeviceType(IntEnum):
     """The type of device.

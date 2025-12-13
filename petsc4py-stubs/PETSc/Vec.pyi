@@ -1,30 +1,31 @@
 """Type stubs for PETSc Vec module."""
 
 from enum import IntEnum, StrEnum
-from typing import Any, Literal, Sequence, Self
-from numpy import ndarray, dtype
+from typing import Any, Literal, Self, Sequence
 
-# Import types from other modules
-from .Object import Object
-from .IS import IS, LGMap
-from .Viewer import Viewer
-from .Random import Random
-
-from .Comm import Comm
-from .DM import DM
+from numpy import dtype, ndarray
 
 # Import types from typing module
 from petsc4py.typing import (
-    Scalar,
+    AccessModeSpec,
     ArrayInt,
     ArrayReal,
     ArrayScalar,
-    LayoutSizeSpec,
     InsertModeSpec,
+    LayoutSizeSpec,
     NormTypeSpec,
+    Scalar,
     ScatterModeSpec,
-    AccessModeSpec,
 )
+
+from .Comm import Comm
+from .DM import DM
+from .IS import IS, LGMap
+
+# Import types from other modules
+from .Object import Object
+from .Random import Random
+from .Viewer import Viewer
 
 class VecType(StrEnum):
     """The vector type."""

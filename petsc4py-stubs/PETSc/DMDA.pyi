@@ -1,17 +1,18 @@
 """Type stubs for PETSc DMDA module."""
 
 from enum import IntEnum
-from typing import Any, Sequence, Self
-
-# Import types from other modules
-from .DM import DM, DMBoundaryType, InsertModeSpec
-from .Comm import Comm
-from .Vec import Vec
-from .Scatter import Scatter
-from .AO import AO
+from typing import Any, Self, Sequence
 
 # Import types from typing module
 from petsc4py.typing import ArrayInt, DimsSpec
+
+from .AO import AO
+from .Comm import Comm
+
+# Import types from other modules
+from .DM import DM, DMBoundaryType, InsertModeSpec
+from .Scatter import Scatter
+from .Vec import Vec
 
 class DMDAStencilType(IntEnum):
     """DMDA Stencil types."""

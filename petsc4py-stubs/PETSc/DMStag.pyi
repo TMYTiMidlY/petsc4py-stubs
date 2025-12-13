@@ -1,12 +1,13 @@
 """Type stubs for PETSc DMStag module."""
 
 from enum import IntEnum
-from typing import Sequence, Self
+from typing import Self, Sequence
+
+from .Comm import Comm
 
 # Import types from other modules
 from .DM import DM, DMBoundaryType
 from .DMDA import DMDA
-from .Comm import Comm
 from .Vec import Vec
 
 class DMStagStencilType(IntEnum):

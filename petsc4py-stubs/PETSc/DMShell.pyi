@@ -1,15 +1,16 @@
 """Type stubs for PETSc DMShell module."""
 
 
-from typing import Any, Callable, Sequence, Self
+from typing import Any, Callable, Self, Sequence
+
+from .Comm import Comm
 
 # Import types from other modules
 from .DM import DM, InsertModeSpec
 from .IS import IS
-from .Comm import Comm
-from .Vec import Vec
 from .Mat import Mat
 from .Scatter import Scatter
+from .Vec import Vec
 
 class DMShell(DM):
     """A shell DM object, used to manage user-defined problem data.
