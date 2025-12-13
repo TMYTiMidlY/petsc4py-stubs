@@ -1,3 +1,9 @@
+## v0.1.8 (2025-12-14)
+
+### Fix
+
+- PETSc.Const.InsertMode ! = PETSc.InsertMode
+
 ## v0.1.7 (2025-12-14)
 
 ### Fix
